@@ -3,9 +3,11 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts import forms
-from matches.models import UserPredictions, Matches, UserScore
+from matches.models import UserPredictions
 from django.contrib.auth.models import User
 import datetime
+from accounts.forms import UpdatePredictionForm
+
 
 
 # Create your views here.
@@ -39,9 +41,10 @@ class UserPredictionsListView(LoginRequiredMixin, ListView):
 
 class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
     model = UserPredictions
-    fields = ('prediction_match_state', 'prediction_goals_home', 'prediction_goals_guest')
+    # fields = ('prediction_match_state', 'prediction_goals_home', 'prediction_goals_guest')
     template_name = 'accounts/profile-update-match.html'
     context_object_name = 'update_match'
+    form_class = UpdatePredictionForm
 
     def get_queryset(self):
         username = self.request.user

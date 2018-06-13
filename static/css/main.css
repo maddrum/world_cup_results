@@ -2031,10 +2031,11 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.5;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2162,6 +2163,7 @@ strong, b {
 h1, h2, h3, h4, h5, h6 {
     color: #e5474b;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 blockquote {
@@ -3769,6 +3771,7 @@ body {
 
 #banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
     color: #fff;
+
 }
 
 #banner blockquote {
@@ -3890,8 +3893,8 @@ body {
     font-size: 2em;
     margin: 0 0 1em 0;
     padding: 0;
-    letter-spacing: 3px;
-    font-weight: 700;
+    /*letter-spacing: 3px;*/
+    font-weight: 900;
 }
 
 #banner h1 span {
@@ -4130,7 +4133,7 @@ body.is-loading #banner:after {
     color: white;
     padding: .5em 0 2em 0;
     background: #689f38;
-    min-height:130px;
+    min-height: 130px;
 
 }
 
