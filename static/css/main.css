@@ -3957,7 +3957,7 @@ body.is-loading #banner:after {
 
 #main {
     padding: 4em 0 2em 0;
-    min-height: calc(100vh - 230px);
+    min-height: calc(100vh - 270px);
 
 }
 
@@ -4129,7 +4129,7 @@ body.is-loading #banner:after {
     color: white;
     padding: .5em 0 2em 0;
     background: #689f38;
-    height:130px;
+    min-height:130px;
 
 }
 
