@@ -21,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 with open('key_no_git_upload.txt') as f:
     SECRET_KEY = f.read().strip()
 
+
 # Developing settings - activate this set for developing
 
 # DEBUG = True
