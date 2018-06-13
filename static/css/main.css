@@ -3957,6 +3957,8 @@ body.is-loading #banner:after {
 
 #main {
     padding: 4em 0 2em 0;
+    min-height: calc(100vh - 207px);
+
 }
 
 #one {
@@ -4127,6 +4129,8 @@ body.is-loading #banner:after {
     color: white;
     padding: .5em 0 2em 0;
     background: #689f38;
+    height:120px;
+
 }
 
 #footer input, #footer select, #footer textarea {
