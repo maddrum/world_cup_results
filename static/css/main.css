@@ -3957,7 +3957,7 @@ body.is-loading #banner:after {
 
 #main {
     padding: 4em 0 2em 0;
-    min-height: calc(100vh - 207px);
+    min-height: calc(100vh - 230px);
 
 }
 
