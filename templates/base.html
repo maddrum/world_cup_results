@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>Като за световно!</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    {% block header_link_load %}
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+
+    {% block header_scripts_load %}
+    {% endblock %}
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <a href="/" class="logo">
+            Като за световно!
+        </a>
+        <nav id="nav">
+            <a href="{% url 'matches:input_prediction' %}">
+                <icon class="glyphicon glyphicon-hand-right"></icon>
+                дневна прогноза</a>
+
+            <a href="{% url 'main_app:schedule' %}">
+                <icon class="glyphicon glyphicon-calendar"></icon>
+                програма</a>
+            <a href="{% url 'main_app:ranklist' %}">
+                <icon class="glyphicon glyphicon-th-list"></icon>
+                Ранглиста</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'accounts:profile' %}">
+                    <icon class="glyphicon glyphicon-wrench"></icon>
+                    Профил</a>
+            {% else %}
+                <a href="{% url 'accounts:login' %}">
+                    <icon class="glyphicon glyphicon-log-in"></icon>
+                    LOGIN</a>
+            {% endif %}
+
+        </nav>
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+{% block banner %}{% endblock %}
+<section id="main">
+    <div class="inner">
+        <header class="major special">
+            <h1>{% block page_content_title %}{% endblock %}</h1>
+        </header>
+        <section>
+            {% block body_content %}
+            {% endblock %}
+        </section>
+    </div>
+</section>
+<section id="footer">
+    <div class="inner">
+        тема взаимствана от: <a href="https://templated.co/">TEMPLATED</a><br>
+        additional design and backend: maddrum
+        контакти: <img src="{% static 'images/email.png' %}">
+
+        <div class="inner" align="center">
+            <a href="{% url 'matches:input_prediction' %}">
+                [ДНЕВНА ПРОГНОЗА]</a>
+            <a href="{% url 'main_app:schedule' %}">
+                [ПРОГРАМА]</a>
+            <a href="{% url 'main_app:ranklist' %}">
+                [РАНГЛИСТА]</a>
+            <a href="{% url 'accounts:profile' %}">
+                [ПРОФИЛ]</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/skel.min.js' %}"></script>
+<script src="{% static 'js/util.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

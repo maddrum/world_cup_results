@@ -1,0 +1,6 @@
+Displays non-interactive user content
+1. Default index page
+2. Match schedule - shows a schedule menu in site - just a TemplateView for matches - dates, results, etc
+3. Ranklist - shows current ranklist for all users
+
+ 

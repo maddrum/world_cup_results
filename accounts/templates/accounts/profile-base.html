@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block header_link_load %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile_page.css' %}">
+    <link rel="stylesheet"
+          href="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/css/material.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+
+{% block body_content %}
+    <div class="container" style="margin-top: 30px;margin-bottom: 40px">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div class="profile-usertitle-name" align="center">Здравей, {{ user }}!</div>
+
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li {% block predictions_menu %}{% endblock %}>
+                                <a href="{% url 'accounts:profile' %}">
+                                    <i class="glyphicon glyphicon-hand-right"></i>Твоите прогнози </a>
+                            </li>
+
+                            <li {% block points_menu %}{% endblock %}>
+                                <a href="{% url 'accounts:profile_history' %}">
+                                    <i class="glyphicon glyphicon-time"></i>Точки и история </a>
+                            </li>
+                            <li {% block settings_menu %}{% endblock %}>
+                                <a href="{% url 'accounts:profile_settings' %}">
+                                    <i class="glyphicon glyphicon-wrench"></i>Настройки </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'accounts:logout' %}">
+                                    <i class="glyphicon glyphicon-log-out"></i>Излез </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    {% block profile_content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body_content %}
+    <h3 style="margin-bottom: 40px;">Not registered.... -> <a href="{% url 'accounts:register' %}">click here</a></h3>
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Login" class="btn btn-default">
+    </form>
+
+{% endblock %}

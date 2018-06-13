@@ -1,0 +1,6 @@
+Manages user accounts 
+1. Register user
+2. User Login
+3. User profile - change data, update predictions, see old predictions
+
+ 

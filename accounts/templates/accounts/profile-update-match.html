@@ -1,0 +1,18 @@
+{% extends 'accounts/profile-base.html' %}
+{% load staticfiles %}
+{% block profile_html_title %}
+    Профил
+{% endblock %}
+{% block predictions_menu %}class="active"{% endblock %}
+{% block  profile_content %}
+    <h3>{{ update_match }}</h3>
+    <form method="post">
+        {{ form }}
+        {% csrf_token %}
+        <ul class="actions">
+            <li><input type="submit" value="Промяна!"></li>
+            <li><input type="reset" value="Изчисти" class="button alt"></li>
+        </ul>
+    </form>
+
+{% endblock %}

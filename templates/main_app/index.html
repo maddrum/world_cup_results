@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block banner %}
+    <section id="banner">
+        <div class="inner">
+            <h1>Като за световно<span><br/>
+					прогнозирай и стани шампион!</span></h1>
+            <ul class="actions">
+                <li><a href="{% url 'matches:input_prediction' %}" class="button alt">Старт!</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:logout' %}" class="button alt">LOGOUT</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}" class="button alt">LOGIN</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+{% block page_content_title %}
+    <h1>За какво става въпрос</h1>
+    <div class="container">
+        <div class="inner">
+            Нещата не са сложни. Мачът почва след 31 минути, но ти все още можеш да дадеш своята прогноза.
+            <br>
+            Наред с това ще имаш възможност да познаеш и какъв ще е крайния резултат от срещата.
+            <br>
+            Разпределяне на точки:
+            <div class="inner">
+                <ol>
+                    <li>
+                        За всяка твоя прогноза получаваш по 1 точка, без значение дали си познал каквото и да е...
+                        Заради
+                        олимпийския принцип, you know;
+                    </li>
+                    <li>
+                        Aко уцелиш победителя от срещата - получаваш още 3 точки;
+                    </li>
+                    <li>
+                        И накрая, ако удариш и точния резултат, получаваш още 5 точки.
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+        <h3> В този сайт няма нищо хазартно. Никой не печели или губи каквото и да е!</h3>
+        <p>Тук играете за чест и слава!</p>
+    </div>
+
+{% endblock %}

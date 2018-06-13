@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body_content %}
+    <div class="table-wrapper">
+        <table>
+            {% for item in ranklist %}
+                {% if forloop.counter == 1 %}
+                    <tr>
+                        <h3>От къде идват точките на {{ item.user_id }}</h3>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <td>
+                        {{ item.match }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {% if item.prediction_match_state == 'home' %}
+                            Прогнозирал: Победа домакин
+                        {% elif item.prediction_match_state == 'guest' %}
+                            Прогнозирал: Победа гост
+                        {% else %}
+                            Прогнозирал: Равен
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.match.match_state == 'home' %}
+                            Действително: Победа домакин
+                        {% elif item.match.match_state == 'guest' %}
+                            Действително: Победа гост
+                        {% else %}
+                            Действително: Равен
+                        {% endif %}
+                    </td>
+                    <td>
+                        Прогнозирал: {{ item.prediction_goals_home }}:{{ item.prediction_goals_guest }}
+                    </td>
+                    <td>
+                        Действително: {{ item.match.score_home }}:{{ item.match.score_guest }}
+                    </td>
+                    <td>
+                        <p>{{ item.prediction_note|linebreaks }}</p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

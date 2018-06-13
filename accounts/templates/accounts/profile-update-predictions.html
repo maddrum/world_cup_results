@@ -1,0 +1,33 @@
+{% extends 'accounts/profile-base.html' %}
+{% load staticfiles %}
+{% block profile_html_title %}
+    Профил
+{% endblock %}
+{% block predictions_menu %}class="active"{% endblock %}
+{% block  profile_content %}
+    <h3>Твоите прогнози</h3>
+    <p>Тук са всички прогнози, които все още могат да се коригират(или с други думи има повече от 30 мин до този
+        мач)</p>
+    {% for item in predictions %}
+        <div class="row inner">
+            <div class="col-md-4 col-sm-12">
+                Мач {{ item.match.match_number }}: {{ item.match.country_home }}-
+                {{ item.match.country_guest }}</div>
+            <div class="col-md-4 col-sm-12"><
+                {% if item.prediction_match_state == "home" %}
+                    победа домакин >
+                {% elif item.prediction_match_state == "guest" %}
+                    победа гост >
+                {% else %}
+                    равен >
+                {% endif %}
+            <br>
+                | резултат: {{ item.prediction_goals_home }}:{{ item.prediction_goals_guest }}|</div>
+            <div class="col-md-4 col-sm-12">
+                <a href="../profile-match-update/{{ item.id }}" class="button special small">Корекция</a>
+            </div>
+
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

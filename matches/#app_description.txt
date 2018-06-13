@@ -1,0 +1,6 @@
+Matches and predictions
+1. Stores matches database - dates, scores, etc
+2. Handle User predictions - user submit and user edit data
+3. Calculate each user points and store points to his profile upon every save in Matches
+
+ 
