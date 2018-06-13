@@ -5,5 +5,7 @@ app_name = 'main_app'
 urlpatterns = [
     url(r'schedule/$', views.Schedule.as_view(), name='schedule'),
     url(r'ranklist/$', views.RankList.as_view(), name='ranklist'),
-    url(r'rankilst-detail/(?P<pk>\d+)', views.RankilstUserPoints.as_view(), name='ranklist_detail')
+    url(r'rankilst-detail/(?P<pk>\d+)', views.RankilstUserPoints.as_view(), name='ranklist_detail'),
+    url(r'contact/$', views.SiteContactView.as_view(), name='site_contact'),
+    url(r'contact-success/$', views.SiteContactSuccessView.as_view(), name='contacts_success'),
 ]

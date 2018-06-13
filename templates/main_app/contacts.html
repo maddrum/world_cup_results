@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body_content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <ul class="actions">
+            <li><input type="submit" value="Питай!"></li>
+            <li><input type="reset" value="Изчисти" class="button alt"></li>
+        </ul>
+    </form>
+
+{% endblock %}

@@ -1,5 +1,7 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, CreateView
 from matches.models import Matches, UserScore, UserPredictions
+from main_app.models import SiteContact
+from main_app.forms import ContactForm
 
 
 class Index(TemplateView):
@@ -32,3 +34,14 @@ class RankilstUserPoints(ListView):
         user_id = int(self.kwargs['pk'])
         queryset = UserPredictions.objects.filter(user_id=user_id)
         return queryset
+
+
+class SiteContactView(CreateView):
+    model = SiteContact
+    success_url = '../contact-success'
+    template_name = 'main_app/contacts.html'
+    form_class = ContactForm
+
+
+class SiteContactSuccessView(TemplateView):
+    template_name = 'main_app/contacts-success.html'
