@@ -12,46 +12,53 @@
         </div>
     </div>
 
-    <form method="post" action="{% url 'matches:prediction_processor' %}">
-        {% csrf_token %}
-        <div class="container">
-            {% for item in form %}
-                <div class="row uniform">
-                    <div class=".col-xs-12 .col-lg-6" style="font-size: 17px;width: 300px">
-                        Мач {{ item.match_number }}: {{ item.country_home }} - {{ item.country_guest }}
-                    </div>
-                    <div class=".col-xs-12 .col-lg-2">
-                        <select name="{{ item.match_number }}_match_state" required
-                                style="font-size: 17px;width: 250px">
-                            <option value="home">Победа за {{ item.country_home }}</option>
-                            <option value="guest">Победа за {{ item.country_guest }}</option>
-                            <option value="tie">Равен</option>
-                        </select>
-                    </div>
+    {% if form %}
+        <form method="post" action="{% url 'matches:prediction_processor' %}">
+            {% csrf_token %}
+            <div class="container">
+                {% for item in form %}
+                    <div class="row uniform">
+                        <div class=".col-xs-12 .col-lg-6" style="font-size: 17px;width: 300px">
+                            Мач {{ item.match_number }}: {{ item.country_home }} - {{ item.country_guest }}
+                        </div>
+                        <div class=".col-xs-12 .col-lg-2">
+                            <select name="{{ item.match_number }}_match_state" required
+                                    style="font-size: 17px;width: 250px">
+                                <option value="home">Победа за {{ item.country_home }}</option>
+                                <option value="guest">Победа за {{ item.country_guest }}</option>
+                                <option value="tie">Равен</option>
+                            </select>
+                        </div>
 
-                    <div class=".col-xs-6 .col-lg-2">
-                        <input type="text" name="{{ item.match_number }}_goals_home"
-                               placeholder="голове за {{ item.country_home }}" required
-                               style="font-size: 17px;width: 200px;">
+                        <div class=".col-xs-6 .col-lg-2">
+                            <input type="text" name="{{ item.match_number }}_goals_home"
+                                   placeholder="голове за {{ item.country_home }}" required
+                                   style="font-size: 17px;width: 200px;">
 
+                        </div>
+                        <div class=".col-xs-6 .col-lg-2">
+                            <input type="text" name="{{ item.match_number }}_goals_guest"
+                                   placeholder="голове за {{ item.country_guest }}" required
+                                   style="font-size: 17px;width: 200px">
+                            <br>
+                        </div>
                     </div>
-                    <div class=".col-xs-6 .col-lg-2">
-                        <input type="text" name="{{ item.match_number }}_goals_guest"
-                               placeholder="голове за {{ item.country_guest }}" required
-                               style="font-size: 17px;width: 200px">
-                        <br>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+
+            <div class="12u$" style="border-top: dashed 3px firebrick">
+            </div>
+            <ul class="actions">
+                <li><input type="submit" value="Дай прогноза!"></li>
+                <li><input type="reset" value="Изчисти" class="button alt"></li>
+            </ul>
+        </form>
+    {% else %}
+        <div class="inner">
+            Не можеш да даваш вече прогнози за днешния ден, но можеш да се насладиш на мачовете.
+            <p>Върни се утре, за да дадеш своите прогнози :).</p>
         </div>
-
-        <div class="12u$" style="border-top: dashed 3px firebrick">
-        </div>
-        <ul class="actions">
-            <li><input type="submit" value="Дай прогноза!"></li>
-            <li><input type="reset" value="Изчисти" class="button alt"></li>
-        </ul>
-    </form>
+    {% endif %}
 
 
 
