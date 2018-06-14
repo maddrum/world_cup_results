@@ -41,7 +41,6 @@ class UserPredictionsListView(LoginRequiredMixin, ListView):
 
 class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
     model = UserPredictions
-    # fields = ('prediction_match_state', 'prediction_goals_home', 'prediction_goals_guest')
     template_name = 'accounts/profile-update-match.html'
     context_object_name = 'update_match'
     form_class = UpdatePredictionForm
@@ -57,7 +56,6 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
         post_data = dict(self.request.POST)
         post_data = {key: value for key, value in post_data.items() if key != "csrfmiddlewaretoken"}
         error_text = ''
-        # {'prediction_match_state': ['guest'], 'prediction_goals_home': ['0'], 'prediction_goals_guest': ['2']}
         for key in post_data:
             if key == 'prediction_goals_home' or key == 'prediction_goals_guest':
                 try:

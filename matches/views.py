@@ -130,7 +130,6 @@ def user_predictions_post_handle(request):
                     has_error = True
 
     # write to database
-    print(predict_match_data)
     for key in predict_match_data:
         if has_error:
             break
@@ -151,5 +150,3 @@ def user_predictions_post_handle(request):
     else:
         content_dict = {}
         return render(request, 'matches/prediction-success.html', content_dict)
-
-
