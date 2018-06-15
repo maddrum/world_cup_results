@@ -3,6 +3,12 @@
     <h2>К'О....НЕ!!!</h2>
     <div class="inner">
         <p>{{ error_text }}</p>
-    </div>
+        {% if show_back_button %}
+            <p>Моля, върни се и оправи нещата!</p>
+            <form>
+                <input type="button" value="Върни се!" onclick="history.back()">
+            </form>
+            </div>
+        {% endif %}
 
 {% endblock %}

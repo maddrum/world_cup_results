@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def user_predictions_start(request):
     error_text = ''
+    show_back_button = True
     user_id = request.user
 
     # date and datetime formats and WC start date
@@ -45,11 +46,13 @@ def user_predictions_start(request):
         user_filter = UserPredictions.objects.filter(match=match_id, user_id=user_id)
         for result in user_filter:
             if result.gave_prediction:
+                show_back_button = False
                 error_text = 'Вече си дал твоите прогнози за деня! ' \
                              'Ако искаш да ги промениш, отиди в твоя профил /с мишката нагоре, менюто, ЦЪК-ЦЪК-ГОТОВО/'
     if error_text:
         content_dict = {
             'error_text': error_text,
+            'show_back_button': show_back_button,
         }
         return render(request, 'matches/prediction-error.html', content_dict)
     else:
@@ -68,10 +71,17 @@ def user_predictions_post_handle(request):
     goals_home = 0
     goals_guest = 0
     has_error = False
+    show_back_button = True
     # check if there is form POST
     if request.method != 'POST':
         error_text = 'Невалидна форма! Върни се в началото!'
-        return render(request, 'matches/prediction-error.html', {'error_text': error_text})
+        show_back_button = False
+        content_dict = {
+            'error_text': error_text,
+            'show_back_button': show_back_button,
+        }
+
+        return render(request, 'matches/prediction-error.html', content_dict)
     # CSRF TOKEN manual check
     reason = CsrfViewMiddleware().process_view(request, None, (), {})
     if reason:
@@ -79,7 +89,6 @@ def user_predictions_post_handle(request):
     # handle POST data and check for errors
     post_data = dict(request.POST)
     post_data = {key: value for key, value in post_data.items() if key != 'csrfmiddlewaretoken'}
-
     predict_match_data = {}
     # check if data input is okay
     for key in post_data:
@@ -116,17 +125,17 @@ def user_predictions_post_handle(request):
             goals_guest = predict_match_data[key][2]
             if state == 'home':
                 if goals_home <= goals_guest:
-                    error_text = f'Головете за мач {match_number} не съотвестват на въведения изход от двубоя. Въведена е победа за домакин, ' \
+                    error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за домакин, ' \
                                  'но головете на домакина по-малко от тези на госта!'
                     has_error = True
             elif state == 'guest':
                 if goals_guest <= goals_home:
-                    error_text = f'Головете за мач {match_number} не съотвестват на въведения изход от двубоя. Въведена е победа за гост, ' \
+                    error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за гост, ' \
                                  'но головете на госта по-малко от тези на домакина!'
                     has_error = True
             else:
                 if goals_home != goals_guest:
-                    error_text = f'Головете мач {match_number} на домакина и на госта не са равни!'
+                    error_text = f'Головете мач {key} на домакина и на госта не са равни!'
                     has_error = True
 
     # write to database
@@ -145,6 +154,7 @@ def user_predictions_post_handle(request):
     if has_error:
         content_dict = {
             'error_text': error_text,
+            'show_back_button': show_back_button,
         }
         return render(request, 'matches/prediction-error.html', content_dict)
     else:

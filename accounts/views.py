@@ -9,7 +9,6 @@ import datetime
 from accounts.forms import UpdatePredictionForm
 
 
-
 # Create your views here.
 class UserRegisterView(CreateView):
     form_class = forms.AccountRegisterForm
@@ -52,6 +51,7 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
         return queryset
 
     def form_valid(self, form):
+        show_back_button = True
         checker = False
         post_data = dict(self.request.POST)
         post_data = {key: value for key, value in post_data.items() if key != "csrfmiddlewaretoken"}
@@ -82,6 +82,7 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
         if checker:
             content_dict = {
                 'error_text': error_text,
+                'show_back_button': show_back_button,
             }
             return render(self.request, 'matches/prediction-error.html', content_dict)
         else:
