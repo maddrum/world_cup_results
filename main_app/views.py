@@ -32,7 +32,7 @@ class RankilstUserPoints(ListView):
 
     def get_queryset(self):
         user_id = int(self.kwargs['pk'])
-        queryset = UserPredictions.objects.filter(user_id=user_id)
+        queryset = UserPredictions.objects.filter(user_id=user_id, match__match_is_over=True)
         return queryset
 
 
