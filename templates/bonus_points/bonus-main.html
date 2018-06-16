@@ -4,21 +4,22 @@
         <h3>Бонус програма</h3>
         <div class="inner">
             По долу ще намериш всички активни бонуси, за които можеш да играеш.<br>
-{#            Ако искаш да видиш тези, които си пропуснал - <a href="#">натисни тук(тодо)</a>#}
+            {#            Ако искаш да видиш тези, които си пропуснал - <a href="#">натисни тук(тодо)</a>#}
         </div>
         <div>
-        <br>
+            <br>
             <h4>Списък на активни бонуси</h4>
             <ul>
-                {% for item in bonuses %}.
-                    {% if item.bonus_active %}
-                        <li>
-                            {{ item }}
-                            <div class="inner">
-                                <p> Акивно до {{ item.active_until }}</p>
-                            </div>
-                        </li>
-                    {% endif %}
+                {% for item in bonuses %}
+                    <li>
+                        {{ item }}
+                        {% if item.participate_link %}
+                            <a href="../bonus-play/{{ item.id }}" class="button">Участвай!</a>
+                        {% endif %}
+                        <div class="inner">
+                            <p> Акивно до {{ item.active_until }}</p>
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
         </div>

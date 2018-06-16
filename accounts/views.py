@@ -114,5 +114,5 @@ class ProfilePredictionStats(LoginRequiredMixin, ListView):
     def get_queryset(self):
         username = self.request.user
         queryset = UserPredictions.objects.filter(user_id__username=username)
-        queryset = queryset.order_by('match')
+        queryset = queryset.order_by('-match__match_start_time_utc')
         return queryset
