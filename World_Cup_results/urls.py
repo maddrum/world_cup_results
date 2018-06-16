@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'main/', include('main_app.urls', namespace='main_app')),
     url(r'accounts/', include('accounts.urls', namespace='accounts')),
     url(r'matches/', include('matches.urls', namespace='matches')),
+    url(r'bonus/', include('bonus_points.urls', namespace='bonus_points')),
     url('admin/', admin.site.urls),
 ]
