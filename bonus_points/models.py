@@ -5,12 +5,15 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class BonusDescription(models.Model):
     # each bonus must have only one correct answer.
+    input_choices = [('text', 'text'), ('number', 'number'), ('country', 'country')]
     bonus_name = models.CharField(max_length=200)
     active_until = models.DateTimeField()
     correct_answer = models.CharField(max_length=500, null=True, blank=True)
     points = models.IntegerField()
     participate_link = models.BooleanField(default=False)
     bonus_active = models.BooleanField(default=False)
+    input_filed = models.CharField(max_length=20, default='text', choices=input_choices)
+    archived = models.BooleanField(default=False)
 
     # only active bonuses will be shown not active bonuses are just a drafts
 
@@ -26,6 +29,7 @@ class BonusUserPrediction(models.Model):
     user_prediction = models.CharField(max_length=500)
     points_gained = models.IntegerField(default=0)
     summary_text = models.CharField(max_length=500)
+    user_participate = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.user) + ' ' + str(self.user_bonus_name)
