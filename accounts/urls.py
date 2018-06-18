@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'profile-password-change/$',
         PasswordChangeView.as_view(template_name='accounts/password-change.html', success_url='../login'),
         name='password_change'),
+    url(r'bonuses/$', views.ProfileBonusView.as_view(), name="profile_bonus"),
 ]

@@ -11,6 +11,7 @@ class BonusDescription(models.Model):
     correct_answer = models.CharField(max_length=500, null=True, blank=True)
     points = models.IntegerField()
     participate_link = models.BooleanField(default=False)
+    #all users automatically apply for bonuses with participate_link = False.
     bonus_active = models.BooleanField(default=False)
     input_filed = models.CharField(max_length=20, default='text', choices=input_choices)
     archived = models.BooleanField(default=False)

@@ -35,6 +35,11 @@
                                 <a href="{% url 'accounts:profile_settings' %}">
                                     <i class="glyphicon glyphicon-wrench"></i>Настройки </a>
                             </li>
+                            <li {% block bonuses_menu %}{% endblock %}>
+                                <a href="{% url 'accounts:profile_bonus' %}">
+                                    <i class="glyphicon glyphicon-check"></i>Бонуси </a>
+                            </li>
+
                             <li>
                                 <a href="{% url 'accounts:logout' %}">
                                     <i class="glyphicon glyphicon-log-out"></i>Излез </a>

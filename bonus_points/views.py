@@ -16,6 +16,20 @@ class BonusMainListView(LoginRequiredMixin, ListView):
         queryset = BonusDescription.objects.filter(bonus_active=True)
         return queryset
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        username = self.request.user
+        context = super().get_context_data()
+        queryset = BonusUserPrediction.objects.filter(user=username)
+        current_utc_time = datetime.datetime.utcnow()
+        for item in context['bonuses']:
+            if item.active_until < current_utc_time:
+                item.archived = True
+            for user_item in queryset:
+                if item == user_item.user_bonus_name:
+                    item.participate_link = False
+
+        return context
+
 
 class BonusPlayMainView(LoginRequiredMixin, FormView):
     # get PK from address, check if bonus is active and check if user have not participated

@@ -7,6 +7,7 @@ from matches.models import UserPredictions
 from django.contrib.auth.models import User
 import datetime
 from accounts.forms import UpdatePredictionForm
+from bonus_points.models import BonusUserPrediction, BonusDescription
 
 
 # Create your views here.
@@ -116,3 +117,24 @@ class ProfilePredictionStats(LoginRequiredMixin, ListView):
         queryset = UserPredictions.objects.filter(user_id__username=username)
         queryset = queryset.order_by('-match__match_start_time_utc')
         return queryset
+
+
+class ProfileBonusView(ListView):
+    model = BonusUserPrediction
+    template_name = 'accounts/profile-bonuses-list.html'
+    context_object_name = 'bonuses'
+
+    def get_queryset(self):
+        username = self.request.user
+        queryset = BonusUserPrediction.objects.filter(user=username)
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        username = self.request.user
+        context = super().get_context_data()
+        queryset = BonusDescription.objects.filter(participate_link=False, bonus_active=True)
+        queryset_gained_points = BonusUserPrediction.objects.exclude(points_gained=0)
+        queryset_gained_points = queryset_gained_points.filter(user=username)
+        context['auto_in'] = queryset
+        context['points_gained'] = queryset_gained_points
+        return context
