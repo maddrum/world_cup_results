@@ -1,22 +1,23 @@
 from django.shortcuts import render
 from django.views.generic import ListView, FormView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from bonus_points.models import BonusDescription, BonusUserPrediction
-from bonus_points.forms import SelectAllCountriesForm, InputTextForm
+from bonus_points.forms import SelectAllCountriesForm, InputTextForm, InputNumberForm
 import datetime
 
 
 # Create your views here.
 
-class BonusMainListView(ListView):
+class BonusMainListView(LoginRequiredMixin, ListView):
     template_name = 'bonus_points/bonus-main.html'
     context_object_name = 'bonuses'
 
     def get_queryset(self):
-        queryset = BonusUserPrediction.objects.filter(user_bonus_name__bonus_active=True)
+        queryset = BonusDescription.objects.filter(bonus_active=True)
         return queryset
 
 
-class BonusPlayMainView(FormView):
+class BonusPlayMainView(LoginRequiredMixin, FormView):
     # get PK from address, check if bonus is active and check if user have not participated
     # writes user prediction to database, or raise error
     # This class must NOT be used alone.
@@ -65,3 +66,7 @@ class AllCountryInputView(BonusPlayMainView):
 
 class TextInputView(BonusPlayMainView):
     form_class = InputTextForm
+
+
+class NumberInputView(BonusPlayMainView):
+    form_class = InputNumberForm

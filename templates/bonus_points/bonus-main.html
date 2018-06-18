@@ -13,19 +13,30 @@
             <div class="inner">
                 <ul>
                     {% for item in bonuses %}
-                         {{ item.user_participate }}
+
+
                         {% if not item.archived %}
                             <li>
-                                {{ item }}
+                                <b>{{ item }}</b> -->
                                 {% if item.participate_link %}
-                                    {% if item.user_participate %}
-                                        Вече участваш!
+                                    {% if item.user_bonus_name.all %}
+                                        {% for user_item in item.user_bonus_name.all %}
+                                            {% if user_item.user == user %}
+                                                {% if user_item.user_participate %}
+                                                    Вече участваш!
+                                                {% else %}
+                                                    <a href="../{{ item.input_filed }}/{{ item.id }}"
+                                                       class="btn btn-success">ВКЛЮЧИ
+                                                        СЕ</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
                                     {% else %}
                                         <a href="../{{ item.input_filed }}/{{ item.id }}" class="btn btn-success">ВКЛЮЧИ
                                             СЕ</a>
                                     {% endif %}
                                 {% else %}
-                                    Вече участваш!
+                                    Участваш автоматично.
                                 {% endif %}
                                 <div class="inner">
                                     <p> Акивно до {{ item.active_until }}</p>

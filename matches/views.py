@@ -78,9 +78,19 @@ def user_predictions_post_handle(request):
         show_back_button = False
         content_dict = {
             'error_text': error_text,
-            'show_back_button': show_back_button,
+            'show_back_button': False,
         }
-
+        return render(request, 'matches/prediction-error.html', content_dict)
+    # check if user have predictions for that day already
+    date_check = datetime.datetime.now().date()
+    check_queryset = UserPredictions.objects.filter(match__match_date=date_check, user_id=user_id).count()
+    if check_queryset != 0:
+        error_text = 'Вече има прогнози за този ден от теб!'
+        show_back_button = False
+        content_dict = {
+            'error_text': error_text,
+            'show_back_button': False,
+        }
         return render(request, 'matches/prediction-error.html', content_dict)
     # CSRF TOKEN manual check
     reason = CsrfViewMiddleware().process_view(request, None, (), {})

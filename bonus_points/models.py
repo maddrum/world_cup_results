@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class BonusDescription(models.Model):
     # each bonus must have only one correct answer.
-    input_choices = [('text', 'text'), ('number', 'number'), ('country', 'country')]
+    input_choices = [('text', 'text'), ('number', 'number'), ('all-countries', 'all-countries')]
     bonus_name = models.CharField(max_length=200)
     active_until = models.DateTimeField()
     correct_answer = models.CharField(max_length=500, null=True, blank=True)
