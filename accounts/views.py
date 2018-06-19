@@ -135,6 +135,12 @@ class ProfileBonusView(ListView):
         queryset = BonusDescription.objects.filter(participate_link=False, bonus_active=True)
         queryset_gained_points = BonusUserPrediction.objects.exclude(points_gained=0)
         queryset_gained_points = queryset_gained_points.filter(user=username)
-        context['auto_in'] = queryset
-        context['points_gained'] = queryset_gained_points
+        if queryset.count() != 0:
+            context['auto_in'] = queryset
+        else:
+            context['auto_in'] = False
+        if queryset_gained_points.count() != 0:
+            context['points_gained'] = queryset_gained_points
+        else:
+            context['points_gained'] = False
         return context

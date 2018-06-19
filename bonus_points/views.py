@@ -20,7 +20,8 @@ class BonusMainListView(LoginRequiredMixin, ListView):
         username = self.request.user
         context = super().get_context_data()
         queryset = BonusUserPrediction.objects.filter(user=username)
-        current_utc_time = datetime.datetime.utcnow()
+        current_utc_time = datetime.datetime.now()
+        print(current_utc_time)
         for item in context['bonuses']:
             if item.active_until < current_utc_time:
                 item.archived = True
