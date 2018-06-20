@@ -1,0 +1,451 @@
+.brand {
+  z-index: 1001;
+  width: 227px;
+  height: 54px;
+  margin-top: 24px;
+  margin-left: 20px;
+  background-image: url('../images/Logo.png');
+  background-position: 0px 0px;
+  background-size: 227px;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  height: 98px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('../images/Pattern1.svg');
+  background-position: 0px 50%;
+  background-size: 1060px 136px;
+  background-repeat: repeat-x;
+  box-shadow: 3px 3px 13px -4px rgba(0, 0, 0, .5);
+}
+
+.nav-link {
+  margin-top: 19px;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.nav-link.bonus {
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #f3daa8;
+  text-align: right;
+}
+
+.nav-link.bb {
+  color: #f3daa8;
+}
+
+.container {
+  max-width: 1160px;
+}
+
+.hero {
+  height: 830px;
+  background-image: url('../images/Bg.png');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-wrp {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 830px;
+  max-width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.heading {
+  position: static;
+  bottom: -360px;
+  margin-top: 34px;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  color: #fff;
+  font-size: 70px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.heading.gold {
+  bottom: -350px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  color: #f3daa8;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+.heading.content {
+  bottom: -350px;
+  display: block;
+  margin-top: 93px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  color: #d51e3a;
+  font-size: 46px;
+  line-height: 145%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.heading.content.subheading {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.ttl-wrp {
+  position: relative;
+}
+
+.start-btn {
+  width: 180px;
+  height: 50px;
+  margin-top: 32px;
+  padding-top: 15px;
+  border-radius: 50px;
+  background-color: #d51e3a;
+  box-shadow: 3px 3px 17px 0 #0d246b;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logout-bn {
+  width: 180px;
+  height: 50px;
+  margin-top: 26px;
+  margin-left: 32px;
+  padding-top: 15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background-color: transparent;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cup-wrp {
+  position: relative;
+  left: 142px;
+  top: 17px;
+  width: 269px;
+  height: 609px;
+  margin-top: 49px;
+  clear: right;
+  background-image: url('../images/Cup_gif.gif');
+  background-position: 50% 50%;
+  background-size: 296px;
+  background-repeat: no-repeat;
+}
+
+.content-wrp {
+  position: relative;
+  display: block;
+  max-width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 36px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.text-block {
+  display: block;
+  margin-top: 54px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Montserrat, sans-serif;
+  color: #044a9e;
+  font-size: 21px;
+  line-height: 143%;
+  font-weight: 500;
+  text-align: center;
+}
+
+.text-block.numbers {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.text-block.ftr {
+  width: 400px;
+  margin-top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  margin-top: 124px;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-style: solid none none;
+  border-width: 10px 3px 3px;
+  border-color: #f3daa8;
+  background-color: #044a9e;
+}
+
+.footer-btn {
+  display: block;
+  width: 180px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  border-radius: 50px;
+  background-color: #d51e3a;
+  box-shadow: 3px 3px 17px 0 #0d246b;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.foot-wrp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  height: 75px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .nav-link {
+    padding: 23px;
+    text-align: center;
+  }
+  .hero-wrp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .heading {
+    margin-top: -13px;
+    line-height: 100%;
+  }
+  .heading.gold {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .heading.content {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .ttl-wrp {
+    top: 156px;
+    display: block;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .cup-wrp {
+    left: 2px;
+    top: 107px;
+    width: 140px;
+    height: 300px;
+    margin-top: 8px;
+    clear: both;
+    background-size: 140px;
+  }
+  .menu-button {
+    margin-top: 20px;
+  }
+  .menu-button.w--open {
+    background-color: transparent;
+  }
+  .nav-menu {
+    background-color: #7c0f0f;
+    box-shadow: 13px 13px 19px 1px rgba(0, 0, 0, .2);
+  }
+  .icon {
+    color: #fff;
+  }
+  .content-wrp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .text-block {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-link {
+    padding-top: 0px;
+    padding-bottom: 4px;
+  }
+  .heading {
+    font-size: 55px;
+  }
+  .heading.gold {
+    font-size: 55px;
+  }
+  .heading.content {
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 55px;
+  }
+  .heading.content.subheading {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+  .start-btn {
+    width: 120px;
+  }
+  .logout-bn {
+    width: 120px;
+    height: 50px;
+  }
+  .text-block {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .footer-btn {
+    width: 120px;
+  }
+  .foot-wrp {
+    width: 600px;
+  }
+}
+
+@media (max-width: 479px) {
+  .nav-link {
+    padding: 14px 25px;
+  }
+  .hero {
+    height: 750px;
+  }
+  .hero-wrp {
+    height: 750px;
+  }
+  .heading {
+    margin-top: -9px;
+    font-size: 32px;
+  }
+  .heading.gold {
+    font-size: 32px;
+  }
+  .heading.content {
+    font-size: 32px;
+  }
+  .ttl-wrp {
+    top: 106px;
+  }
+  .start-btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .logout-bn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .cup-wrp {
+    margin-top: -93px;
+  }
+  .text-block.ftr {
+    width: 200px;
+    margin-top: 35px;
+  }
+  .footer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+  .footer-btn {
+    display: block;
+    margin-top: 27px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .foot-wrp {
+    display: block;
+    width: 200px;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@font-face {
+  font-family: 'Dusha fifa world cup 2018';
+  src: url('../fonts/Dusha_-_FIFA_World_Cup_2018.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
