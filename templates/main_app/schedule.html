@@ -4,8 +4,11 @@
 {% endblock %}
 {% block body_content %}
     <div class="inner">
-        <h3 align="center">Групова фаза</h3>
-        {% for item in schedule %}
+        <h3 align="center">Мачовете днес</h3>
+        {% if not today_matches %}
+            Днес няма мачове!
+        {% endif %}
+        {% for item in today_matches %}
             {% if item.phase == 'group_phase' %}
                 <h4 align="center">Maч {{ item.match_number }} </h4>
                 <table align="center">
@@ -34,6 +37,41 @@
                 <p align="center"><em>{{ item.match_date }}@{{ item.match_start_time }}</em></p>
             {% endif %}
         {% endfor %}
+    </div>
+
+
+
+
+    <h3 align="center">Групова фаза</h3>
+    {% for item in schedule %}
+        {% if item.phase == 'group_phase' %}
+            <h4 align="center">Maч {{ item.match_number }} </h4>
+            <table align="center">
+                <tr>
+                    <td align="right" width="40%">
+                        {{ item.country_home }}
+                    </td>
+                    <td style="background-color: gainsboro;">
+                        {% if item.match_is_over %}
+                            <b>{{ item.score_home }}</b>
+                        {% endif %}
+                    </td>
+                    <td width="8%">
+                        <b>:</b>
+                    </td>
+                    <td style="background-color: gainsboro;">
+                        {% if item.match_is_over %}
+                            <b>{{ item.score_guest }}</b>
+                        {% endif %}
+                    </td>
+                    <td width="40%" align="left">
+                        {{ item.country_guest }}
+                    </td>
+                </tr>
+            </table>
+            <p align="center"><em>{{ item.match_date }}@{{ item.match_start_time }}</em></p>
+        {% endif %}
+    {% endfor %}
     </div>
 
     <h6>всички начални часове са по бг време</h6>
