@@ -2,6 +2,7 @@ from django.views.generic import TemplateView, ListView, CreateView
 from matches.models import Matches, UserScore, UserPredictions
 from main_app.models import SiteContact
 from main_app.forms import ContactForm
+import datetime
 
 
 class Index(TemplateView):
@@ -12,6 +13,13 @@ class Schedule(ListView):
     template_name = 'main_app/schedule.html'
     model = Matches
     context_object_name = 'schedule'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        date = datetime.datetime.now().date()
+        today_matches = Matches.objects.filter(match_date=date)
+        context['today_matches'] = today_matches
+        return context
 
 
 class RankList(ListView):
@@ -32,7 +40,7 @@ class RankilstUserPoints(ListView):
 
     def get_queryset(self):
         user_id = int(self.kwargs['pk'])
-        queryset = UserPredictions.objects.filter(user_id=user_id, match__match_is_over=True)
+        queryset = UserPredictions.objects.filter(user_id=user_id, match__match_is_over=True).order_by('-match__match_start_time_utc')
         return queryset
 
 
