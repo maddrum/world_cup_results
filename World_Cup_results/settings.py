@@ -24,7 +24,7 @@ with open('key_no_git_upload.txt') as f:
 
 # Developing settings - activate this set for developing
 
-DEBUG = True
+# DEBUG = True
 
 # Deployment settings - activate this in production
 
