@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from bonus_points.models import BonusDescription, BonusUserPrediction
-from bonus_points.forms import SelectAllCountriesForm, InputTextForm, InputNumberForm
+from bonus_points.forms import SelectAllCountriesForm, InputTextForm, InputNumberForm, InputSomeChoicesForm
 import datetime
 
 
@@ -84,3 +84,16 @@ class TextInputView(BonusPlayMainView):
 
 class NumberInputView(BonusPlayMainView):
     form_class = InputNumberForm
+
+
+class SomeChoicesView(BonusPlayMainView):
+    form_class = InputSomeChoicesForm
+
+    def get_form_kwargs(self):
+        pk = self.kwargs['pk']
+        query = BonusDescription.objects.get(id=pk)
+        options = query.available_choices.split(',')
+        choices = {'choices': options}
+        kwargs = super().get_form_kwargs()
+        kwargs['choices'] = choices
+        return kwargs

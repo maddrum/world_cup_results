@@ -5,18 +5,22 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class BonusDescription(models.Model):
     # each bonus must have only one correct answer.
-    input_choices = [('text', 'text'), ('number', 'number'), ('all-countries', 'all-countries')]
+    input_choices = [('text', 'text'), ('number', 'number'), ('all-countries', 'all-countries'),
+                     ('choices', 'choices')]
     bonus_name = models.CharField(max_length=200)
     active_until = models.DateTimeField()
     correct_answer = models.CharField(max_length=500, null=True, blank=True)
     points = models.IntegerField()
     participate_link = models.BooleanField(default=False)
-    #all users automatically apply for bonuses with participate_link = False.
+    # all users automatically apply for bonuses with participate_link = False.
     bonus_active = models.BooleanField(default=False)
+    # only active bonuses will be shown not active bonuses are just a drafts
     input_filed = models.CharField(max_length=20, default='text', choices=input_choices)
     archived = models.BooleanField(default=False)
+    available_choices = models.CharField(max_length=600, default='No')
+    # for bonuses which have selector field. This field contains comma separated options
+    # only taken when 'choices' is selected for input_field
 
-    # only active bonuses will be shown not active bonuses are just a drafts
 
     def __str__(self):
         return str(self.bonus_name) + ' и вземи ' + str(self.points) + ' точки'
