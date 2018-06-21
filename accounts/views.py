@@ -143,4 +143,5 @@ class ProfileBonusView(ListView):
             context['points_gained'] = queryset_gained_points
         else:
             context['points_gained'] = False
+        # todo add auto points gained
         return context

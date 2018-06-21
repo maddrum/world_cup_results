@@ -18,6 +18,7 @@ class BonusDescription(models.Model):
     input_filed = models.CharField(max_length=20, default='text', choices=input_choices)
     archived = models.BooleanField(default=False)
     available_choices = models.CharField(max_length=600, default='No')
+
     # for bonuses which have selector field. This field contains comma separated options
     # only taken when 'choices' is selected for input_field
 
@@ -38,6 +39,19 @@ class BonusUserPrediction(models.Model):
 
     def __str__(self):
         return str(self.user) + ' ' + str(self.user_bonus_name)
+
+
+class BonusUserAutoPoints(models.Model):
+    # stores points for user points with no participate link
+    user_model = get_user_model()
+    auto_user_bonus_name = models.ForeignKey(BonusDescription, on_delete=models.CASCADE,
+                                             related_name='auto_user_bonus_name')
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE, related_name='auto_bonus_user')
+    points_gained = models.IntegerField(default=0)
+    summary_text = models.CharField(max_length=500)
+
+    def __str__(self):
+        return str(self.user) + ' ' + str(self.auto_user_bonus_name)
 
 
 class UserBonusSummary(models.Model):
