@@ -21,6 +21,6 @@ class InputSomeChoicesForm(forms.Form):
         self.choices = kwargs.pop('choices')
         super(InputSomeChoicesForm, self).__init__(*args, **kwargs)
         self.choices_list = [(item, item) for item in self.choices['choices']]
-        self.fields['choices'].widget = Select(choices=self.choices_list)
+        self.fields['user_prediction'].widget = Select(choices=self.choices_list)
 
-    choices = forms.CharField(label='Избери едно:')
+    user_prediction = forms.CharField(label='Избери едно:')
