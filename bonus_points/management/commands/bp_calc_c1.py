@@ -9,8 +9,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         all_users = get_user_model().objects.all()
         bonus_desc_object = BonusDescription.objects.get(id=1)
-        needed_count = int(bonus_desc_object.correct_answer) - 15
-
+        needed_count = int(bonus_desc_object.correct_answer)
         points = bonus_desc_object.points
         # delete existing objects
         delete_current_objects = BonusUserAutoPoints.objects.filter(auto_user_bonus_name=bonus_desc_object)

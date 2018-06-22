@@ -7,7 +7,7 @@ from matches.models import UserPredictions
 from django.contrib.auth.models import User
 import datetime
 from accounts.forms import UpdatePredictionForm
-from bonus_points.models import BonusUserPrediction, BonusDescription
+from bonus_points.models import BonusUserPrediction, BonusDescription, BonusUserAutoPoints
 
 
 # Create your views here.
@@ -143,5 +143,9 @@ class ProfileBonusView(ListView):
             context['points_gained'] = queryset_gained_points
         else:
             context['points_gained'] = False
-        # todo add auto points gained
+        queryset_auto_points = BonusUserAutoPoints.objects.filter(user=username)
+        if queryset_auto_points.count() != 0:
+            context['auto_points'] = queryset_auto_points
+        else:
+            context['auto_points'] = False
         return context

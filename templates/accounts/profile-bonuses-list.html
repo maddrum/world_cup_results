@@ -2,7 +2,7 @@
 {% block bonuses_menu %}class="active"{% endblock %}
 {% block  profile_content %}
 
-    <h3>Бонус програма</h3>
+    <h3 xmlns="http://www.w3.org/1999/html">Бонус програма</h3>
     <h4>Ти игра за:</h4>
     <div class="inner">
 
@@ -11,7 +11,8 @@
                 {% for item in bonuses %}
                     <li>
                         {{ item.user_bonus_name.bonus_name }} от което можеш да спечелиш
-                        <b>{{ item.user_bonus_name.points }}</b> точки;
+                        <b>{{ item.user_bonus_name.points }}</b> точки
+                        <div class="inner"> Твоят отговор: {{ item.user_prediction }}</div>
                     </li>
                 {% endfor %}
             {% endif %}
@@ -26,23 +27,25 @@
 
         </ul>
         {% if not bonuses and not auto_in %}
-
             <p>Не си участвал за никакви бонуси все още!</p>
-
         {% endif %}
     </div>
-
     <h4>От това спечели:</h4>
     <div class="inner">
-        {% if points_gained %}
-            <ul>
+        <ul>
+            {% if points_gained %}
                 {% for item in points_gained %}
-                    {% if item.points_gained != 0 %}
-                        <li>{{ item.user_bonus_name.bonus_name }} - {{ item.points_gained }} точки</li>
-                    {% endif %}
+                    <li>{{ item.user_bonus_name.bonus_name }} - {{ item.points_gained }} точки;</li>
                 {% endfor %}
-            </ul>
-        {% else %}
+            {% endif %}
+            {% if auto_points %}
+
+                {% for item in auto_points %}
+                    <li>{{ item.auto_user_bonus_name }} - {{ item.points_gained }} точки;</li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+        {% if not points_gained and not auto_points %}
             <p>Все още не си получил бонус точки.</p>
         {% endif %}
     </div>
