@@ -86,7 +86,7 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
         if current_time > match_start_time:
             print(f'NOTE: {self.request.user} tried to change {self.object} at UTC: {current_time}')
             checker = True
-            error_text = 'Изтекло време за корекция на прогнозите.'
+            error_text = 'Изтекло време за корекция на прогнозата.'
         if checker:
             content_dict = {
                 'error_text': error_text,
