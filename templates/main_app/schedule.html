@@ -15,7 +15,7 @@
         {% endif %}
         {% for item in today_matches %}
             {% if item.phase == 'group_phase' %}
-                <h4 align="center">Maч {{ item.match_number }} </h4>
+                <h4 align="center"><a href="../match-detail/{{ item.match_number }}">Мач {{ item.match_number }}</a></h4>
                 <table align="center">
                     <tr>
                         <td align="right" width="40%">
@@ -50,7 +50,7 @@
     <h3 align="center">Групова фаза</h3>
     {% for item in schedule %}
         {% if item.phase == 'group_phase' %}
-            <h4 align="center">Maч {{ item.match_number }} </h4>
+            <h4 align="center"><a href="../match-detail/{{ item.match_number }}">Мач {{ item.match_number }}</a></h4>
             <table align="center">
                 <tr>
                     <td align="right" width="40%">

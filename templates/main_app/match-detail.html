@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body_content %}
+
+    {% if match %}
+        {% for item in match %}
+            {% if forloop.counter == 1 %}
+                <div class="row inner">
+                    <h3>Кой какво е прогнозирал за {{ item.match }}</h3>
+                </div>
+            {% endif %}
+            <div class="row"><h5>{{ item.user_id }}</h5></div>
+            <div class="row inner">
+                <div class="col-sm-12">
+                    {% if item.prediction_match_state == 'home' %}
+                        Победа за {{ item.match.country_home }}
+                    {% elif item.prediction_match_state == 'guest' %}
+                        Победа {{ item.match.country_guest }}
+                    {% else %}
+                        Равен
+                    {% endif %}
+                </div>
+                <div class="col-sm-12">
+                    Прогнозиран резултат --> {{ item.match.country_home }} - {{ item.match.country_guest }}
+                    {{ item.prediction_goals_home }} : {{ item.prediction_goals_guest }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        Не може да гледаш прогнозите на другите за все още не завършили мачове. Трябва да опазим тайната на вота, you
+        know...
+    {% endif %}
+
+{% endblock %}
