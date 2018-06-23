@@ -13,8 +13,6 @@
             <div class="inner">
                 <ul>
                     {% for item in bonuses %}
-
-
                         {% if not item.archived %}
                             <li>
                                 <b>{{ item }}</b> -->
@@ -25,7 +23,7 @@
                                     Вече си в схемата!
                                 {% endif %}
                                 <div class="inner">
-                                    <p> Акивно до {{ item.active_until }}</p>
+                                    <p> Активно до {{ item.active_until }}</p>
                                 </div>
                             </li>
                         {% endif %}
@@ -46,7 +44,7 @@
                             <li>
                                 {{ item.bonus_name }} за {{ item.points }} точки
                                 <div class="inner">
-                                    <p> Беше акивно до: {{ item.active_until }}</p>
+                                    <p> Беше активно до: {{ item.active_until }}</p>
                                 </div>
                             </li>
                         {% endif %}
