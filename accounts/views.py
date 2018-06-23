@@ -80,6 +80,13 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
                 elif post_data[key][0] == 'tie' and goals_home != goals_guest:
                     checker = True
                     error_text = 'Головете на домакина и на госта не са равни!'
+        current_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=15)
+        match_start_time = self.object.match.match_start_time_utc
+        # check for time before applying corrections
+        if current_time > match_start_time:
+            print(f'NOTE: {self.request.user} tried to change {self.object} at UTC: {current_time}')
+            checker = True
+            error_text = 'Изтекло време за корекция на прогнозите.'
         if checker:
             content_dict = {
                 'error_text': error_text,
