@@ -1,78 +1,66 @@
 {% extends 'base.html' %}
-{% block header_title %}
-    Програма
-{% endblock %}
 {% block body_content %}
-    <div class="inner">
-        <h3 align="center">Мачовете днес</h3>
-        {% if not today_matches %}
-            Днес няма мачове!
-        {% endif %}
-        {% for item in today_matches %}
-            {% if item.phase == 'group_phase' %}
-                <h4 align="center">Maч {{ item.match_number }} </h4>
-                <table align="center">
-                    <tr>
-                        <td align="right" width="40%">
-                            {{ item.country_home }}
-                        </td>
-                        <td style="background-color: gainsboro;">
-                            {% if item.match_is_over %}
-                                <b>{{ item.score_home }}</b>
-                            {% endif %}
-                        </td>
-                        <td width="8%">
-                            <b>:</b>
-                        </td>
-                        <td style="background-color: gainsboro;">
-                            {% if item.match_is_over %}
-                                <b>{{ item.score_guest }}</b>
-                            {% endif %}
-                        </td>
-                        <td width="40%" align="left">
-                            {{ item.country_guest }}
-                        </td>
-                    </tr>
-                </table>
-                <p align="center"><em>{{ item.match_date }}@{{ item.match_start_time }}</em></p>
-            {% endif %}
-        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+    <div class="inner_page_header">
+        <div class="heading results_ttl">Програма</div>
     </div>
-
-
-
-
-    <h3 align="center">Групова фаза</h3>
-    {% for item in schedule %}
-        {% if item.phase == 'group_phase' %}
-            <h4 align="center">Maч {{ item.match_number }} </h4>
-            <table align="center">
-                <tr>
-                    <td align="right" width="40%">
-                        {{ item.country_home }}
-                    </td>
-                    <td style="background-color: gainsboro;">
-                        {% if item.match_is_over %}
-                            <b>{{ item.score_home }}</b>
-                        {% endif %}
-                    </td>
-                    <td width="8%">
-                        <b>:</b>
-                    </td>
-                    <td style="background-color: gainsboro;">
-                        {% if item.match_is_over %}
-                            <b>{{ item.score_guest }}</b>
-                        {% endif %}
-                    </td>
-                    <td width="40%" align="left">
-                        {{ item.country_guest }}
-                    </td>
-                </tr>
-            </table>
-            <p align="center"><em>{{ item.match_date }}@{{ item.match_start_time }}</em></p>
-        {% endif %}
-    {% endfor %}
+    <div class="results">
+        <div class="content-wrp">
+            {% for item in schedule %}
+                <div class="game-wrp">
+                    <div class="match-number">
+                        <a href="../match-detail/{{ item.match_number }}" style="color: white">Мач {{ item.match_number }}</a>
+                    </div>
+                    <div class="w-row">
+                        <div class="column-4 w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                            <div class="team">
+                                <div class="team-ttl">{{ item.country_home }}</div>
+                            </div>
+                        </div>
+                        <div class="column-3 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                            <div class="score">
+                                <div class="score-txt">
+                                    {% if item.match_is_over %}
+                                        {{ item.score_home }}
+                                    {% else %}
+                                        ___
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-2 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                            <div class="score">
+                                <div class="score-txt">
+                                    {% if item.match_is_over %}
+                                        {{ item.score_guest }}
+                                    {% else %}
+                                        ___
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                            <div class="team">
+                                <div class="team-ttl">{{ item.country_guest }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-date">{{ item.match_date }} {{ item.match_start_time }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <h6>всички начални часове са по бг време</h6>
     </div>
-
-    <h6>всички начални часове са по бг време</h6>
 {% endblock %}
+
+
+

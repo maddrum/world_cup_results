@@ -27,11 +27,17 @@
 }
 
 .nav-link {
-  margin-top: 19px;
+  height: 98px;
+  padding-top: 39px;
   font-family: 'Dusha fifa world cup 2018', sans-serif;
   color: #fff;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+.nav-link.w--current {
+  border-bottom: 8px solid #f3daa8;
+  color: #fff;
 }
 
 .nav-link.bonus {
@@ -52,6 +58,7 @@
 
 .hero {
   height: 830px;
+  background-color: #1c6bb4;
   background-image: url('../images/Bg.png');
   background-position: 0px 0px;
   background-size: cover;
@@ -115,6 +122,16 @@
   text-transform: uppercase;
 }
 
+.heading.results_ttl {
+  position: relative;
+  bottom: -300px;
+  height: 75px;
+  margin-top: 0px;
+  color: #f3daa8;
+  font-size: 90px;
+  text-align: center;
+}
+
 .ttl-wrp {
   position: relative;
 }
@@ -168,9 +185,11 @@
   position: relative;
   display: block;
   max-width: 1160px;
+  min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 36px;
+  padding-top: 17px;
+  padding-bottom: 90px;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -209,7 +228,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 100px;
-  margin-top: 124px;
+  margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
   clear: both;
@@ -262,10 +281,226 @@
   align-items: center;
 }
 
+.inner_page_header {
+  height: 450px;
+  background-color: #1c6bb4;
+  background-image: url('../images/Bg_Inner.png');
+  background-position: 50% 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.body {
+  background-color: transparent;
+}
+
+.results {
+  background-color: #1c6bb4;
+}
+
+.game-wrp {
+  margin: 107px 46px 46px;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.team {
+  display: block;
+  width: 90%;
+  height: 75px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 100px;
+  background-color: #fff;
+  box-shadow: 1px 1px 14px 0 #044a9e;
+}
+
+.score {
+  display: block;
+  width: 70%;
+  height: 75px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 8px;
+  background-color: #f3daa8;
+  box-shadow: 1px 1px 14px 0 #044a9e;
+}
+
+.column {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.column-2 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.column-3 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.match-number {
+  margin: 38px;
+  color: #fff;
+  font-size: 36px;
+}
+
+.match-date {
+  margin: 38px;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.team-ttl {
+  padding-top: 29px;
+  color: #044a9e;
+  font-size: 36px;
+}
+
+.score-txt {
+  padding-top: 29px;
+  color: #044a9e;
+  font-size: 36px;
+}
+
+.body-2 {
+  background-color: #1c6bb4;
+}
+
+.rarnk-txt {
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rarnk-txt.user {
+  text-transform: none;
+}
+
+.rarnk-txt.points {
+  color: #f3daa8;
+}
+
+.info-table {
+  position: static;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rankings1 {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2675be;
+}
+
+.info-wirp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 114px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.info-wirp.third-txt {
+  margin-top: 100px;
+}
+
+.info-wirp.second-txt {
+  margin-top: 131px;
+}
+
+.info-wirp.napadatel-txt {
+  margin-top: 35px;
+}
+
+.info-wirp.bojinka-txt {
+  margin-top: 15px;
+}
+
+.image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.rankings2 {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2975bb;
+}
+
+.rankings2-copy {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2975bb;
+}
+
+.rankings3 {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2975bb;
+}
+
+.rankings4 {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2975bb;
+}
+
+.rankings5 {
+  margin-top: 0px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #2975bb;
+}
+
 @media (max-width: 991px) {
   .nav-link {
     padding: 23px;
     text-align: center;
+  }
+  .nav-link.w--current {
+    border-bottom: 0px none #000;
+    color: #fff;
   }
   .hero-wrp {
     -webkit-box-orient: vertical;
@@ -337,6 +572,97 @@
     padding-right: 35px;
     padding-left: 35px;
   }
+  .game-wrp {
+    margin-top: 20px;
+  }
+  .team {
+    width: 80%;
+    height: 60px;
+  }
+  .score {
+    height: 60px;
+    border-radius: 5px;
+  }
+  .column {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .column-2 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .column-3 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .column-4 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .team-ttl {
+    padding-top: 21px;
+    font-size: 26px;
+  }
+  .score-txt {
+    padding-top: 22px;
+    font-size: 30px;
+  }
+  .rankings1 {
+    padding-bottom: 34px;
+  }
+  .info-wirp {
+    margin-top: 21px;
+  }
+  .info-wirp.third-txt {
+    margin-top: 16px;
+  }
+  .info-wirp.second-txt {
+    margin-top: 32px;
+  }
+  .image {
+    display: block;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .image.first {
+    width: 50%;
+  }
+  .image.third {
+    width: 30%;
+  }
+  .image.napadatel {
+    width: 30%;
+  }
+  .image.half {
+    width: 20%;
+  }
+  .image.bek {
+    width: 15%;
+  }
+  .image.bojinka {
+    width: 8%;
+  }
+  .rankings2 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .rankings2-copy {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .rankings3 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .rankings4 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .rankings5 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -359,12 +685,19 @@
     padding-right: 48px;
     padding-left: 48px;
   }
+  .heading.results_ttl {
+    margin-top: -77px;
+    font-size: 75px;
+  }
   .start-btn {
     width: 120px;
   }
   .logout-bn {
     width: 120px;
     height: 50px;
+  }
+  .content-wrp {
+    padding-top: 1px;
   }
   .text-block {
     padding-right: 24px;
@@ -375,6 +708,29 @@
   }
   .foot-wrp {
     width: 600px;
+  }
+  .game-wrp {
+    margin-top: 15px;
+  }
+  .team {
+    display: block;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .score {
+    height: 40px;
+  }
+  .team-ttl {
+    padding-top: 11px;
+    font-size: 20px;
+  }
+  .score-txt {
+    padding-top: 11px;
+    font-size: 22px;
+  }
+  .info-wirp {
+    margin-top: 34px;
   }
 }
 
@@ -398,6 +754,10 @@
   .heading.content {
     font-size: 32px;
   }
+  .heading.results_ttl {
+    margin-top: -193px;
+    font-size: 42px;
+  }
   .ttl-wrp {
     top: 106px;
   }
@@ -413,6 +773,9 @@
   }
   .cup-wrp {
     margin-top: -93px;
+  }
+  .content-wrp {
+    padding-top: 7px;
   }
   .text-block.ftr {
     width: 200px;
@@ -437,9 +800,48 @@
   .foot-wrp {
     display: block;
     width: 200px;
-    height: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+  .inner_page_header {
+    height: 350px;
+    margin-top: 70px;
+    padding-top: 0px;
+  }
+  .game-wrp {
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+  .team {
+    display: block;
+    width: 90%;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .score {
+    width: 90%;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  .team-ttl {
+    font-size: 16px;
+  }
+  .score-txt {
+    font-size: 18px;
+  }
+  .rarnk-txt.position {
+    font-size: 20px;
+  }
+  .rarnk-txt.user {
+    font-size: 20px;
+  }
+  .rarnk-txt.points {
+    font-size: 20px;
   }
 }
 

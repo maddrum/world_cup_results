@@ -7,8 +7,10 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
+
     {% block header_link_load %}
     {% endblock %}
+
     <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/webflow.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/milens-top-notch-project.webflow.css' %}" rel="stylesheet" type="text/css">
@@ -23,7 +25,6 @@
     <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
 
-
     <meta property="og:url"
           content="http://worldcup.pythonanywhere.com/"/>
     <meta property="og:type" content="website"/>
@@ -31,10 +32,12 @@
     <meta property="og:description" content="Прогнозирай и стани шампион!"/>
     <meta property="og:image"
           content="http://worldcup.pythonanywhere.com/static/images/banner.png"/>
+
     {% block header_scripts_load %}
     {% endblock %}
+
 </head>
-<body>
+<body class="body">
 <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container w-container"><a href="/" class="brand w-nav-brand"></a>
         <nav role="navigation" class="w-nav-menu">
@@ -53,13 +56,12 @@
         </div>
     </div>
 </div>
+
 {% block banner %}
 {% endblock %}
-<div class="content-wrp">
-    {% block body_content %}
-    {% endblock %}
-</div>
 
+{% block body_content %}
+{% endblock %}
 
 <div class="footer">
     <div class="foot-wrp">
