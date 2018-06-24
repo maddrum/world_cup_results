@@ -1,24 +1,16 @@
 {% extends 'base.html' %}
 {% block body_content %}
 
-
-
-
-
-
-
-
-
-
     <div class="inner_page_header">
         <div class="heading results_ttl">Програма</div>
     </div>
     <div class="results">
         <div class="content-wrp">
-            {% for item in schedule %}
+            {% for item in group_phase %}
                 <div class="game-wrp">
                     <div class="match-number">
-                        <a href="../match-detail/{{ item.match_number }}" style="color: white">Мач {{ item.match_number }}</a>
+                        <a href="../match-detail/{{ item.match_number }}"
+                           style="color: white">Мач {{ item.match_number }}</a>
                     </div>
                     <div class="w-row">
                         <div class="column-4 w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
