@@ -1,53 +1,53 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block banner %}
-    <section id="banner">
-        <div class="inner">
-
-            <h1>Ранглист<span><br/>
-					Kой ще триумфира с купата?</span></h1>
-
-        </div>
-    </section>
-{% endblock %}
 
 {% block body_content %}
-    <h4>Временно класиране</h4>
+    <div class="inner_page_header">
+        <div class="heading results_ttl">ранглист</div>
+    </div>
+    <div class="content-wrp">
 
-    <blockquote>Цъкни върху юзъра да видиш от къде са му точките!</blockquote>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-            <tr>
-                <th></th>
-                <th>Позиция</th>
-                <th>Потребител</th>
-                <th>Toчки</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for item in ranklist %}
-                <tr>
-                    <td align="center">
-                        {% if forloop.counter == 1 %}
-                            <img src="{% static 'images/cup.jpg' %}">
-                        {% elif forloop.counter == 2 %}
-                            <img src="{% static 'images/silver.jpg' %}">
-                        {% elif forloop.counter == 3 %}
-                            <img src="{% static 'images/bronze.jpg' %}">
-                        {% endif %}
-                    </td>
-                    <td>{{ forloop.counter }}</td>
-                    <td>
-                        <a href="../rankilst-detail/{{ item.user_id.id }}">{{ item.user_id }}</a>
-                    </td>
-                    <td>
-                        {{ item.points }}
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
     </div>
 {% endblock %}
+
+
+
+<h4>Временно класиране</h4>
+
+<blockquote>Цъкни върху юзъра да видиш от къде са му точките!</blockquote>
+
+<div class="table-wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Позиция</th>
+            <th>Потребител</th>
+            <th>Toчки</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in ranklist %}
+            <tr>
+                <td align="center">
+                    {% if forloop.counter == 1 %}
+                        <img src="{% static 'images/cup.jpg' %}">
+                    {% elif forloop.counter == 2 %}
+                        <img src="{% static 'images/silver.jpg' %}">
+                    {% elif forloop.counter == 3 %}
+                        <img src="{% static 'images/bronze.jpg' %}">
+                    {% endif %}
+                </td>
+                <td>{{ forloop.counter }}</td>
+                <td>
+                    <a href="../rankilst-detail/{{ item.user_id.id }}">{{ item.user_id }}</a>
+                </td>
+                <td>
+                    {{ item.points }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
