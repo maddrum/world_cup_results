@@ -34,7 +34,7 @@ class Matches(models.Model):
     match_is_over = models.BooleanField(default=False)
 
     def __str__(self):
-        return_str = 'мач ' + str(self.match_number) + ':' + str(self.country_home) + '-' + str(self.country_guest)
+        return_str = 'мач ' + str(self.match_number) + ' | ' + str(self.country_home) + ' - ' + str(self.country_guest)
         return return_str
 
     class Meta:

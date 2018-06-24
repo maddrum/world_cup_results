@@ -156,6 +156,14 @@ def user_predictions_post_handle(request):
         goals_home = predict_match_data[key][1]
         goals_guest = predict_match_data[key][2]
         match = Matches.objects.get(match_number=key)
+        # check if match has started!
+        current_time = datetime.datetime.utcnow()
+        if current_time > match.match_start_time_utc:
+            print(f'NOTE: {request.user} tried to give prediction for {match} at UTC: {current_time}')
+            has_error = True
+            error_text = error_text + f'|||Твоята прогноза за {match} не беше зачетена, тъй като мача е вече започнал.|||'
+            show_back_button = False
+            continue
         user_prediction = UserPredictions(user_id=user_id, match=match, prediction_match_state=match_state,
                                           prediction_goals_home=goals_home, prediction_goals_guest=goals_guest,
                                           gave_prediction=True)

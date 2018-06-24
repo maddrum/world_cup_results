@@ -5,18 +5,23 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class BonusDescription(models.Model):
     # each bonus must have only one correct answer.
-    input_choices = [('text', 'text'), ('number', 'number'), ('all-countries', 'all-countries')]
+    input_choices = [('text', 'text'), ('number', 'number'), ('all-countries', 'all-countries'),
+                     ('choices', 'choices')]
     bonus_name = models.CharField(max_length=200)
     active_until = models.DateTimeField()
     correct_answer = models.CharField(max_length=500, null=True, blank=True)
     points = models.IntegerField()
     participate_link = models.BooleanField(default=False)
-    #all users automatically apply for bonuses with participate_link = False.
+    # all users automatically apply for bonuses with participate_link = False.
     bonus_active = models.BooleanField(default=False)
+    # only active bonuses will be shown not active bonuses are just a drafts
     input_filed = models.CharField(max_length=20, default='text', choices=input_choices)
     archived = models.BooleanField(default=False)
+    available_choices = models.CharField(max_length=600, default='No')
 
-    # only active bonuses will be shown not active bonuses are just a drafts
+    # for bonuses which have selector field. This field contains comma separated options
+    # only taken when 'choices' is selected for input_field
+
 
     def __str__(self):
         return str(self.bonus_name) + ' и вземи ' + str(self.points) + ' точки'
@@ -34,6 +39,19 @@ class BonusUserPrediction(models.Model):
 
     def __str__(self):
         return str(self.user) + ' ' + str(self.user_bonus_name)
+
+
+class BonusUserAutoPoints(models.Model):
+    # stores points for user points with no participate link
+    user_model = get_user_model()
+    auto_user_bonus_name = models.ForeignKey(BonusDescription, on_delete=models.CASCADE,
+                                             related_name='auto_user_bonus_name')
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE, related_name='auto_bonus_user')
+    points_gained = models.IntegerField(default=0)
+    summary_text = models.CharField(max_length=500)
+
+    def __str__(self):
+        return str(self.user) + ' ' + str(self.auto_user_bonus_name)
 
 
 class UserBonusSummary(models.Model):

@@ -7,7 +7,7 @@ from matches.models import UserPredictions
 from django.contrib.auth.models import User
 import datetime
 from accounts.forms import UpdatePredictionForm
-from bonus_points.models import BonusUserPrediction, BonusDescription
+from bonus_points.models import BonusUserPrediction, BonusDescription, BonusUserAutoPoints
 
 
 # Create your views here.
@@ -80,6 +80,13 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
                 elif post_data[key][0] == 'tie' and goals_home != goals_guest:
                     checker = True
                     error_text = 'Головете на домакина и на госта не са равни!'
+        current_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=15)
+        match_start_time = self.object.match.match_start_time_utc
+        # check for time before applying corrections
+        if current_time > match_start_time:
+            print(f'NOTE: {self.request.user} tried to change {self.object} at UTC: {current_time}')
+            checker = True
+            error_text = 'Изтекло време за корекция на прогнозата.'
         if checker:
             content_dict = {
                 'error_text': error_text,
@@ -143,4 +150,9 @@ class ProfileBonusView(ListView):
             context['points_gained'] = queryset_gained_points
         else:
             context['points_gained'] = False
+        queryset_auto_points = BonusUserAutoPoints.objects.filter(user=username)
+        if queryset_auto_points.count() != 0:
+            context['auto_points'] = queryset_auto_points
+        else:
+            context['auto_points'] = False
         return context

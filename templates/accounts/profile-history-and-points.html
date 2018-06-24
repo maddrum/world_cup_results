@@ -6,7 +6,7 @@
     {% for item in history %}
         <div style="border: outset 1px darkslategray">
             <div class="row uniform">
-                <h3>Мач {{ item.match.match_number }}:{{ item.match.country_home }}:{{ item.match.country_guest }}</h3>
+                <h3>Мач {{ item.match.match_number }} | {{ item.match.country_home }} - {{ item.match.country_guest }}</h3>
             </div>
             <div class="row inner">
                 <div class="col-md-4">
@@ -15,18 +15,18 @@
                     <ul>
                         <li>
                             {% if item.prediction_match_state == 'home' %}
-                                Победа домакин
+                                Победа за {{ item.match.country_home }}
                             {% elif item.prediction_match_state == 'guest' %}
-                                Победа гост
+                                Победа за {{ item.match.country_guest }}
                             {% else %}
                                 Равен
                             {% endif %}
                         </li>
                         <li>
-                            Голове за домакин: {{ item.prediction_goals_home }}
+                            Голове за {{ item.match.country_home }} : {{ item.prediction_goals_home }}
                         </li>
                         <li>
-                            Голове за гост: {{ item.prediction_goals_guest }}
+                            Голове за {{ item.match.country_guest }} : {{ item.prediction_goals_guest }}
                         </li>
                     </ul>
                 </div>
@@ -36,18 +36,18 @@
                         <ul>
                             <li>
                                 {% if item.match.match_state == 'home' %}
-                                    Победа домакин
+                                    Победа за {{ item.match.country_home }}
                                 {% elif item.match.match_state == 'guest' %}
-                                    Победа гост
+                                    Победа за {{ item.match.country_guest }}
                                 {% else %}
                                     Равен
                                 {% endif %}
                             </li>
                             <li>
-                                Голове за домакин: {{ item.match.score_home }}
+                                Голове за {{ item.match.country_home }} : {{ item.match.score_home }}
                             </li>
                             <li>
-                                Голове за гост: {{ item.match.score_guest }}
+                                Голове за {{ item.match.country_guest }} : {{ item.match.score_guest }}
                             </li>
                         </ul>
                     {% else %}
