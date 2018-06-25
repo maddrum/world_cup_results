@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
+{% block body_tag_define %}
+    <body class="body-2">
+{% endblock %}
 {% block body_content %}
-    {% for item in ranklist %}
-        {% if forloop.counter == 1 %}
-            <div class="row uniform">
-                <h3>От къде са точките на {{ item.user_id }}</h3>
-            </div>
-        {% endif %}
-        <div style="border: outset 1px darkslategray">
-            <div class="row inner">
-                <h5>{{ item.match }}</h5>
-            </div>
-            <div class="row inner">
-                <div class="inner">
-                    <div class="col-md-4">
+    <div class="content-wrp">
+        {% for item in ranklist %}
+            {% if forloop.counter == 1 %}
+                <div class="inner_page_header">
+                    <div class="heading results_ttl">От къде са точките на {{ item.user_id }}</div>
+                </div>
+
+            {% endif %}
+            <div class="rankings1 w-row">
+                <div class="w-row">
+                    <div class="match-number" align="center">
+                        {{ item.match }}
+                    </div>
+                    <div class="w-col w-col-4 w-col-stack w-row">
                         <h5>Прогнозирал:</h5>
                         <ul>
                             <li>
@@ -32,7 +36,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="w-col w-col-4 w-col-stack">
                         <h5>В действителсност</h5>
                         <ul>
                             <li>
@@ -53,38 +57,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row inner">
-                    <h5>получени точки за срещата</h5>
-                    <div class="col-md-12" style="border-bottom: dashed 2px firebrick">
-                        {{ item.prediction_note|linebreaks }}
-                    </div>
-                    <div style="padding-top: 20px">
-                        <h5>Общо точки: {{ item.points_gained }} </h5>
-                    </div>
+            </div>
 
+
+            <div class="w-row">
+                <h5>получени точки за срещата</h5>
+                <div class="w-row" style="border-bottom: dashed 2px white">
+                    {{ item.prediction_note|linebreaks }}
+                </div>
+                <div style="padding-top: 20px">
+                    <h5>Общо точки: {{ item.points_gained }} </h5>
                 </div>
             </div>
-        </div>
 
-    {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        {% endfor %}
 
     </div>
+
 
 {% endblock %}
