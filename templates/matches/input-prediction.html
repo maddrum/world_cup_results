@@ -1,67 +1,71 @@
 {% extends 'base.html' %}
+
+{% block body_tag_define %}
+    <body class="body-2">
+{% endblock %}
+
 {% block body_content %}
-
-    <div class="container">
-        <h4>Мачовете за {{ date }}</h4>
-        <div class="inner">
-            <p>Мачовете по-долу са тези, за които все още може да дадеш твоята прогноза.<br>
-                Ако дадена среща не се показва, то значи предстои тя започне след по-малко от 30 мин и вече е късно
-                да дадеш прогноза за нея. <br>
-                С други думи е време да идеш до халдилника за нова бира и да оставиш интернета на мира за малко :)
-            </p>
-        </div>
+    <div class="inner_page_header">
+        <div class="heading inner-ttl">{{ date }}<br><br></div>
     </div>
-
-    {% if form %}
-        <form method="post" action="{% url 'matches:prediction_processor' %}">
-            {% csrf_token %}
-            <div class="container">
+    <div class="content-wrp">
+        <div class="text-block white">Мачовете по-долу са тези, за които все още може да дадеш твоята прогноза.<br>Ако
+            дадена среща не се показва, то значи предстои тя започне след по-малко от 30 мин и вече е късно да дадеш
+            прогноза за нея.<br>‍<br>С други думи е време да идеш до халдилника за нова бира и да оставиш интернета на
+            мира
+            за малко :)<br>
+        </div>
+        {% if form %}
+            <form method="post" action="{% url 'matches:prediction_processor' %}">
+                {% csrf_token %}
                 {% for item in form %}
-                    <div class="row uniform">
-                        <div class=".col-xs-12 .col-lg-6" style="font-size: 17px;width: 300px">
-                            Мач {{ item.match_number }}: {{ item.country_home }} - {{ item.country_guest }}
-                        </div>
-                        <div class=".col-xs-12 .col-lg-2">
+                    <div class="input-wrp">
+                        <div class="game-single">
+                            <div class="match-number">Мач {{ item.match_number }}</div>
+                            <div class="w-row">
+                                <div class="column-4 w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                                    <div class="team">
+                                        <div class="team-ttl">{{ item.country_home }}</div>
+                                    </div>
+                                </div>
+                                <div class="column-3 w-col w-col-2 w-col-small-2 w-col-tiny-2">
+                                    <div class="vs-txt">vs</div>
+                                </div>
+                                <div class="column-2 w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                                    <div class="team">
+                                        <div class="team-ttl">{{ item.country_guest }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="match-date">{{ item.match_date }} {{ item.match_start_time }}</div>
+
                             <select name="{{ item.match_number }}_match_state" required
                                     style="font-size: 17px;width: 250px">
                                 <option value="home">Победа за {{ item.country_home }}</option>
                                 <option value="guest">Победа за {{ item.country_guest }}</option>
                                 <option value="tie">Равен</option>
+                                <option value="penalties_home">Победа за {{ item.country_home }} след дузпи</option>
+                                <option value="penalties_guest">Победа за {{ item.country_guest }} след дузпи</option>
                             </select>
-                        </div>
 
-                        <div class=".col-xs-6 .col-lg-2">
                             <input type="text" name="{{ item.match_number }}_goals_home"
                                    placeholder="голове за {{ item.country_home }}" required
                                    style="font-size: 17px;width: 200px;">
 
-                        </div>
-                        <div class=".col-xs-6 .col-lg-2">
                             <input type="text" name="{{ item.match_number }}_goals_guest"
                                    placeholder="голове за {{ item.country_guest }}" required
                                    style="font-size: 17px;width: 200px">
-                            <br>
+
                         </div>
                     </div>
                 {% endfor %}
+                <input type="submit" value="Дай прогноза!">
+            </form>
+        {% else %}
+            <div class="w-row">
+                Не можеш да даваш вече прогнози за днешния ден, или днес няма мачаове.
+                <p>Върни се утре, за да дадеш своите прогнози, а до тогава не оставяй бирата да се стопля!</p>
             </div>
-
-            <div class="12u$" style="border-top: dashed 3px firebrick">
-            </div>
-            <ul class="actions">
-                <li><input type="submit" value="Дай прогноза!"></li>
-                <li><input type="reset" value="Изчисти" class="button alt"></li>
-            </ul>
-        </form>
-    {% else %}
-        <div class="inner">
-            Не можеш да даваш вече прогнози за днешния ден, но можеш да се насладиш на мачовете.
-            <p>Върни се утре, за да дадеш своите прогнози :).</p>
-        </div>
-    {% endif %}
-
-
-
-
-
+        {% endif %}
+    </div>
 {% endblock %}
