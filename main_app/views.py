@@ -82,6 +82,8 @@ class MatchDetailView(ListView):
             self.match_number = item.match.match_number
             self.match_date = item.match.match_date
             self.match_time = item.match.match_start_time
+            self.score_home = item.match.score_home
+            self.score_guest = item.match.score_guest
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -91,4 +93,6 @@ class MatchDetailView(ListView):
         context['match_number'] = self.match_number
         context['match_date'] = self.match_date
         context['match_time'] = self.match_time
+        context['score_home'] = self.score_home
+        context['score_guest'] = self.score_guest
         return context
