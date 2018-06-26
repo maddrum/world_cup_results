@@ -3,46 +3,104 @@
     <body class="body-2">
 {% endblock %}
 {% block body_content %}
+    <div class="inner_page_header">
+        <div class="heading inner-ttl">сметки</div>
+    </div>
     <div class="content-wrp">
-        {% if match %}
-            {% for item in match %}
-                <div class="rankings1 w-row">
-                    {% if forloop.counter == 1 %}
-                        <div class="inner_page_header">
-                            <div class="heading results_ttl">{{ item.match }}</div>
-                        </div>
-                    {% endif %}
-                    <div class="w-row"> Прогноза на {{ item.user_id }} </div>
-                    <div class="w-row">
-                        <ul>
-                            <li>
-                                {% if item.prediction_match_state == 'home' %}
-                                    Победа за {{ item.match.country_home }}
-                                {% elif item.prediction_match_state == 'guest' %}
-                                    Победа {{ item.match.country_guest }}
-                                {% else %}
-                                    Равен
-                                {% endif %}
-                            </li>
-                            <li>
-                                Прогнозиран резултат --> {{ item.match.country_home }} - {{ item.match.country_guest }}
-                                {{ item.prediction_goals_home }} : {{ item.prediction_goals_guest }}
-                            </li>
-                        </ul>
+        <div class="game-single">
+            <div class="match-number">{{ item.match.match_number }}</div>
+            <div class="w-row">
+                <div class="column-4 w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                    <div class="team">
+                        <div class="team-ttl">{{ item.match.country_home }}</div>
                     </div>
                 </div>
-            {% endfor %}
-        {% else %}
-            <div class="inner_page_header">
-                <div class="heading results_ttl">ми.... тц!</div>
+                <div class="column-3 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                    <div class="score">
+                        <div class="score-txt">{{ item.match.score_home }}</div>
+                    </div>
+                </div>
+                <div class="column-2 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                    <div class="score">
+                        <div class="score-txt">{{ item.match.score_guest }}</div>
+                    </div>
+                </div>
+                <div class="column w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                    <div class="team">
+                        <div class="team-ttl">{{ item.match.country_guest }}</div>
+                    </div>
+                </div>
             </div>
-            <div class="w-row">
+            <div class="match-date">
+                {{ item.match.match_date }} {{ item.match.match_start_time }}
+            </div>
+        </div>
+        {% if match %}
+            {% for item in match %}
+                {% if forloop.counter == 1 %}
+
+                {% endif %}
+            {% endfor %}
+
+        {% else %}
+            <div class="text-block white">
+
                 Не може да гледаш прогнозите на другите за все още не завършили мачове. Трябва да опазим тайната на
-                вота,
-                you
-                know...
+                вота!
+
             </div>
         {% endif %}
     </div>
+
+
+
+
+
+
 {% endblock %}
+
+
+
+
+<div class="content-wrp">
+    {% if match %}
+        {% for item in match %}
+            <div class="rankings1 w-row">
+                {% if forloop.counter == 1 %}
+                    <div class="inner_page_header">
+                        <div class="heading results_ttl">{{ item.match }}</div>
+                    </div>
+                {% endif %}
+                <div class="w-row"> Прогноза на {{ item.user_id }} </div>
+                <div class="w-row">
+                    <ul>
+                        <li>
+                            {% if item.prediction_match_state == 'home' %}
+                                Победа за {{ item.match.country_home }}
+                            {% elif item.prediction_match_state == 'guest' %}
+                                Победа {{ item.match.country_guest }}
+                            {% else %}
+                                Равен
+                            {% endif %}
+                        </li>
+                        <li>
+                            Прогнозиран резултат --> {{ item.match.country_home }} - {{ item.match.country_guest }}
+                            {{ item.prediction_goals_home }} : {{ item.prediction_goals_guest }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="inner_page_header">
+            <div class="heading results_ttl">ми.... тц!</div>
+        </div>
+        <div class="w-row">
+            Не може да гледаш прогнозите на другите за все още не завършили мачове. Трябва да опазим тайната на
+            вота,
+            you
+            know...
+        </div>
+    {% endif %}
+</div>
 
