@@ -37,7 +37,6 @@
         </div>
         {% if match %}
             {% for item in match %}
-
                 <div class="smetka-wrp">
                     <div class="heading content white">Прогноза на {{ item.user_id }}</div>
                     <ul class="result w-list-unstyled">
@@ -47,15 +46,19 @@
                                     Победа за {{ item.match.country_home }}
                                 {% elif item.prediction_match_state == 'guest' %}
                                     Победа {{ item.match.country_guest }}
+                                {% elif item.prediction_match_state == 'penalties_home' %}
+                                    Победа за {{ item.match.country_home }} след дузпи
+                                {% elif item.prediction_match_state == 'penalties_guest' %}
+                                    Победа за {{ item.match.country_guest }} след дузпи
                                 {% else %}
                                     Равен
                                 {% endif %}
-
                             </div>
                         </li>
                         <li class="list-item-2">
                             <div class="text-block white">
-                                Прогнозиран резултат  {{ item.prediction_goals_home }} : {{ item.prediction_goals_guest }}
+                                Прогнозиран резултат {{ item.prediction_goals_home }}
+                                : {{ item.prediction_goals_guest }}
                             </div>
                         </li>
 
@@ -74,43 +77,3 @@
         {% endif %}
     </div>
 {% endblock %}
-
-
-
-
-<div class="content-wrp">
-    {% if match %}
-        {% for item in match %}
-            <div class="rankings1 w-row">
-                {% if forloop.counter == 1 %}
-                    <div class="inner_page_header">
-                        <div class="heading results_ttl">{{ item.match }}</div>
-                    </div>
-                {% endif %}
-                <div class="w-row"> Прогноза на {{ item.user_id }} </div>
-                <div class="w-row">
-                    <ul>
-                        <li>
-
-                        </li>
-                        <li>
-                            Прогнозиран резултат --> {{ item.match.country_home }} - {{ item.match.country_guest }}
-                            {{ item.prediction_goals_home }} : {{ item.prediction_goals_guest }}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        {% endfor %}
-    {% else %}
-        <div class="inner_page_header">
-            <div class="heading results_ttl">ми.... тц!</div>
-        </div>
-        <div class="w-row">
-            Не може да гледаш прогнозите на другите за все още не завършили мачове. Трябва да опазим тайната на
-            вота,
-            you
-            know...
-        </div>
-    {% endif %}
-</div>
-

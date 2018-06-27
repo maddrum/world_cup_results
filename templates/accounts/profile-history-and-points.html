@@ -6,11 +6,11 @@
     {% for item in history %}
         <div style="border: outset 1px darkslategray">
             <div class="row uniform">
-                <h3>Мач {{ item.match.match_number }} | {{ item.match.country_home }} - {{ item.match.country_guest }}</h3>
+                <h3>Мач {{ item.match.match_number }} | {{ item.match.country_home }}
+                    - {{ item.match.country_guest }}</h3>
             </div>
             <div class="row inner">
                 <div class="col-md-4">
-
                     <h5>На теория трябваше:</h5>
                     <ul>
                         <li>
@@ -18,6 +18,10 @@
                                 Победа за {{ item.match.country_home }}
                             {% elif item.prediction_match_state == 'guest' %}
                                 Победа за {{ item.match.country_guest }}
+                            {% elif item.prediction_match_state == 'penalties_home' %}
+                                Победа за {{ item.match.country_home }} след дузпи
+                            {% elif item.prediction_match_state == 'penalties_guest' %}
+                                Победа за {{ item.match.country_guest }} след дузпи
                             {% else %}
                                 Равен
                             {% endif %}
@@ -39,6 +43,10 @@
                                     Победа за {{ item.match.country_home }}
                                 {% elif item.match.match_state == 'guest' %}
                                     Победа за {{ item.match.country_guest }}
+                                {% elif item.prediction_match_state == 'penalties_home' %}
+                                    Победа за {{ item.match.country_home }} след дузпи
+                                {% elif item.prediction_match_state == 'penalties_guest' %}
+                                    Победа за {{ item.match.country_guest }} след дузпи
                                 {% else %}
                                     Равен
                                 {% endif %}
