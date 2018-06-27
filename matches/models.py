@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
 from django.utils import timezone
 from django.urls import reverse_lazy
+import datetime
 
 
 class Countries(models.Model):
@@ -20,7 +21,9 @@ class Matches(models.Model):
     phase_selector = [('group_phase', 'Групова фаза'), ('eighth-finals', 'Осминафинали'),
                       ('quarterfinals', 'Четвъртфинал'), ('semifinals', 'Полуфинал'), ('little_final', 'Малък финал'),
                       ('final', 'Финал')]
-    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен')]
+    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен'),
+                    ('penalties_home', 'Победа за домакин след дузпи'),
+                    ('penalties_guest', 'Победа за гост след дузпи')]
     country_home = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_home')
     country_guest = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_guest')
     match_number = models.IntegerField(blank=False, null=False)
@@ -52,12 +55,16 @@ class UserPredictions(models.Model):
     gave_prediction = models.BooleanField(default=False)
     prediction_note = models.TextField(default='Дал си прогноза за мача: 1 т.')
     points_gained = models.IntegerField(default=0, null=False)
+    # creation and last_edit times. Equal if no edit has been made
+    creation_time = models.DateTimeField(default=datetime.datetime.utcnow)
+    last_edit = models.DateTimeField(default=datetime.datetime.utcnow)
 
     def __str__(self):
         return str(self.user_id) + " " + str(self.match)
 
     def get_absolute_url(self):
         return reverse_lazy('accounts:profile')
+
 
 class UserScore(models.Model):
     user = get_user_model()
@@ -93,7 +100,7 @@ def score_calculator(sender, instance, created, *args, **kwargs):
         item.points_gained = points
         item.prediction_note = note
         item.save()
-    #calculate ranklist
+    # calculate ranklist
     UserScore.objects.all().delete()
     all_predictions = UserPredictions.objects.all()
     ranklist = {item.user_id: 0 for item in all_predictions}
@@ -105,7 +112,6 @@ def score_calculator(sender, instance, created, *args, **kwargs):
     for item in ranklist:
         p = UserScore(user_id=item, points=ranklist[item])
         p.save()
-
 
 
 post_save.connect(score_calculator, sender=Matches)
