@@ -166,7 +166,8 @@ def user_predictions_post_handle(request):
             continue
         user_prediction = UserPredictions(user_id=user_id, match=match, prediction_match_state=match_state,
                                           prediction_goals_home=goals_home, prediction_goals_guest=goals_guest,
-                                          gave_prediction=True)
+                                          gave_prediction=True, creation_time=datetime.datetime.utcnow(),
+                                          last_edit=datetime.datetime.utcnow())
         user_prediction.save()
 
     if has_error:
