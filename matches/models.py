@@ -21,9 +21,10 @@ class Matches(models.Model):
     phase_selector = [('group_phase', 'Групова фаза'), ('eighth-finals', 'Осминафинали'),
                       ('quarterfinals', 'Четвъртфинал'), ('semifinals', 'Полуфинал'), ('little_final', 'Малък финал'),
                       ('final', 'Финал')]
-    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен'),
-                    ('penalties_home', 'Победа за домакин след дузпи'),
-                    ('penalties_guest', 'Победа за гост след дузпи')]
+    # match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен'),
+    #                 ('penalties_home', 'Победа за домакин след дузпи'),
+    #                 ('penalties_guest', 'Победа за гост след дузпи')]
+    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен')]
     country_home = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_home')
     country_guest = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_guest')
     match_number = models.IntegerField(blank=False, null=False)
