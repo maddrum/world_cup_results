@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1102df6c-a3ef-41cf-9a52-6887cfdcf546" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/templates/matches/input-prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matches/input-prediction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/matches/prediction-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matches/prediction-success.html" afterDir="false" />
+    </list>
+    <ignored path="db.sqlite3" />
+    <ignored path="key_no_git_upload.txt" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/World_Cup_results$views.coverage" NAME="views Coverage Results" MODIFIED="1528466209395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/matches" />
+    <SUITE FILE_PATH="coverage/World_Cup_results$timezone_playground.coverage" NAME="timezone_playground Coverage Results" MODIFIED="1528363338598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/matches" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="prediction-success.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/matches/prediction-success.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input-prediction.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/matches/input-prediction.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prediction-error.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/matches/prediction-error.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="71" column="100" lean-forward="true" selection-start-line="71" selection-start-column="100" selection-end-line="71" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>header</find>
+      <find>#e5474b</find>
+      <find>#018e42</find>
+      <find>font-family</find>
+      <find>input</find>
+      <find>input[type=&quot;text&quot;]</find>
+      <find>.row</find>
+      <find>#6ec13a</find>
+      <find>UserProfileHistoryView</find>
+      <find>table</find>
+      <find>footer</find>
+      <find>main</find>
+      <find>banner</find>
+      <find>h1</find>
+      <find>print(</find>
+      <find>conte</find>
+      <find>content_dict</find>
+      <find>717171</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/profile-update-match.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/register-success.html" />
+        <option value="$PROJECT_DIR$/matches/admin.py" />
+        <option value="$PROJECT_DIR$/templates/main_app/ranklist-view-points.html" />
+        <option value="$PROJECT_DIR$/static/css/profile_page.css" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/register.html" />
+        <option value="$PROJECT_DIR$/templates/main_app/schedule_new.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/profile-update-predictions.html" />
+        <option value="$PROJECT_DIR$/main_app/admin.py" />
+        <option value="$PROJECT_DIR$/templates/main_app/contacts-success.html" />
+        <option value="$PROJECT_DIR$/main_app/models.py" />
+        <option value="$PROJECT_DIR$/main_app/forms.py" />
+        <option value="$PROJECT_DIR$/templates/main_app/contacts.html" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/World_Cup_results/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/profile-history-and-points.html" />
+        <option value="$PROJECT_DIR$/templates/matches/prediction-error.html" />
+        <option value="$PROJECT_DIR$/templates/bonus_points/bonus-input-form.html" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/profile-base.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/profile-bonuses-list.html" />
+        <option value="$PROJECT_DIR$/templates/test.html" />
+        <option value="$PROJECT_DIR$/bonus_points/management/commands/calculate_bonus_points.py" />
+        <option value="$PROJECT_DIR$/bonus_points/management/commands/CBP_C1.py" />
+        <option value="$PROJECT_DIR$/bonus_points/urls.py" />
+        <option value="$PROJECT_DIR$/bonus_points/views.py" />
+        <option value="$PROJECT_DIR$/bonus_points/forms.py" />
+        <option value="$PROJECT_DIR$/bonus_points/management/commands/bp_calc.py" />
+        <option value="$PROJECT_DIR$/bonus_points/models.py" />
+        <option value="$PROJECT_DIR$/bonus_points/admin.py" />
+        <option value="$PROJECT_DIR$/templates/accounts/profile-bonuses-list.html" />
+        <option value="$PROJECT_DIR$/bonus_points/management/commands/bp_calc_c1.py" />
+        <option value="$PROJECT_DIR$/matches/views.py" />
+        <option value="$PROJECT_DIR$/main_app/urls.py" />
+        <option value="$PROJECT_DIR$/templates/accounts/profile-history-and-points.html" />
+        <option value="$PROJECT_DIR$/matches/models.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/bonus_points/management/commands/bp_calc_non_auto.py" />
+        <option value="$PROJECT_DIR$/templates/bonus_points/bonus-main.html" />
+        <option value="$PROJECT_DIR$/static/js/input_prediction_checker.js" />
+        <option value="$PROJECT_DIR$/World_Cup_results/settings.py" />
+        <option value="$PROJECT_DIR$/main_app/views.py" />
+        <option value="$PROJECT_DIR$/templates/main_app/schedule.html" />
+        <option value="$PROJECT_DIR$/templates/main_app/index.html" />
+        <option value="$PROJECT_DIR$/templates/main_app/ranklist.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/main_app/ranklist-detail.html" />
+        <option value="$PROJECT_DIR$/templates/main_app/match-detail.html" />
+        <option value="$PROJECT_DIR$/templates/matches/prediction-success.html" />
+        <option value="$PROJECT_DIR$/templates/matches/input-prediction.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="277" />
+    <option name="y" value="83" />
+    <option name="width" value="1186" />
+    <option name="height" value="824" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="World_Cup_results" type="b2602c69:ProjectViewProjectNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="World_Cup_results" type="b2602c69:ProjectViewProjectNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+              <item name="matches" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="World_Cup_results" type="b2602c69:ProjectViewProjectNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="World_Cup_results" type="b2602c69:ProjectViewProjectNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="matches" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="World_Cup_results" type="b2602c69:ProjectViewProjectNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+              <item name="World_Cup_results" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\maddrum\OneDrive\World_Cup_Project\World_Cup_results\templates\main_app" />
+      <recent name="D:\maddrum\OneDrive\World_Cup_Project\World_Cup_results\bonus_points\management\commands" />
+      <recent name="D:\maddrum\OneDrive\World_Cup_Project\World_Cup_results\accounts\templates\accounts" />
+      <recent name="D:\Users\onedrive\World_Cup_Project\World_Cup_results\templates\main_app" />
+      <recent name="D:\Users\onedrive\World_Cup_Project\World_Cup_results\templates\matches" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.World_Cup_results">
+    <configuration name="timezone_playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="World_Cup_results" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/matches" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/matches/timezone_playground.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="World_Cup_results" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/matches" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/matches/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="World_Cup_results" type="Python.DjangoServer" factoryName="Django server">
+      <module name="World_Cup_results" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.World_Cup_results" />
+      <item itemvalue="Python.views" />
+      <item itemvalue="Python.timezone_playground" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.timezone_playground" />
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.timezone_playground" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1102df6c-a3ef-41cf-9a52-6887cfdcf546" name="Default" comment="" />
+      <created>1527767512434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527767512434</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Deployment site&#10;added contact form">
+      <created>1528914891302</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1528914891302</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Deployment site&#10;added contact form">
+      <created>1528915250814</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1528915250814</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Deployment site&#10;added contact form">
+      <created>1528915680100</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1528915680100</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Deployment site&#10;added contact form">
+      <created>1528916357558</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1528916357558</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Deployment site&#10;some redesigns">
+      <created>1528917690488</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1528917690488</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Deployment site&#10;some redesigns">
+      <created>1528920512899</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1528920512899</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Deployment site&#10;some redesigns">
+      <created>1528961064693</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1528961064693</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Deployment site&#10;some redesigns">
+      <created>1528961812107</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1528961812107</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Deployment site&#10;some redesigns">
+      <created>1528980782322</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1528980782322</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Deployment site&#10;some redesigns">
+      <created>1528981055673</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1528981055674</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Deployment site&#10;some redesigns">
+      <created>1528981313928</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1528981313928</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Deployment site&#10;some redesigns">
+      <created>1528981508244</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1528981508244</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Deployment site&#10;some redesigns">
+      <created>1528981581494</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1528981581494</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Deployment site&#10;input form bug fix">
+      <created>1528989426291</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1528989426291</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Deployment site&#10;some code cleanup">
+      <created>1528997502147</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1528997502147</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Deployment site&#10;added back button on input forms">
+      <created>1529055755656</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1529055755656</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Deployment site&#10;added back button on input forms">
+      <created>1529059715574</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1529059715574</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Deployment site&#10;ranglist detail design">
+      <created>1529084166222</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1529084166222</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Deployment site&#10;Bonus Points Initial">
+      <created>1529143754958</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1529143754959</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Deployment site&#10;Bonus Points Initial">
+      <created>1529144011555</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1529144011555</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Deployment site&#10;Bonus Points Initial">
+      <created>1529153510549</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1529153510550</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Deployment site&#10;Bonus Points Initial">
+      <created>1529153589307</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1529153589307</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Deployment site&#10;Bonus Points Initial">
+      <created>1529168290112</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1529168290112</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Deployment site&#10;Bonus Points database migrations">
+      <created>1529237216279</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1529237216280</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Deployment site&#10;Bonus points user account">
+      <created>1529355242725</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1529355242725</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Deployment site&#10;Bonus points user account">
+      <created>1529389671422</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1529389671423</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Deployment site&#10;Bonus points user account&#10;DateTime format change">
+      <created>1529390977169</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1529390977169</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Deployment site&#10;Bonus points user account&#10;DateTime format change">
+      <created>1529478284561</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1529478284561</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Deployment site&#10;Bonus points user account&#10;DateTime format change">
+      <created>1529478710294</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1529478710294</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Rebranding Base and index page">
+      <created>1529497086423</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1529497086424</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Rebranding Base and index page">
+      <created>1529526487771</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1529526487771</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Rebranding Base and index page&#10;add v2 templates">
+      <created>1529529645997</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1529529645997</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Added choices bonus selector">
+      <created>1529591150727</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1529591150728</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Added choices bonus selector">
+      <created>1529591175393</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1529591175393</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Added choices bonus selector">
+      <created>1529592015876</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1529592015876</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Added choices bonus selector">
+      <created>1529615433772</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1529615433772</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Profile prediction bonuses diplay">
+      <created>1529691215606</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1529691215606</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Check for current time for input and edit predictions">
+      <created>1529731008078</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1529731008079</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Click on match on schedule now shows user predictions for that match">
+      <created>1529742136038</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1529742136040</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Click on match on schedule now shows user predictions for that match">
+      <created>1529742484874</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1529742484875</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Click on match on schedule now shows user predictions for that match">
+      <created>1529755575979</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1529755575979</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Non auto bonus calculator">
+      <created>1529786700171</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1529786700171</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Schedule redisign">
+      <created>1529852996470</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1529852996470</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Schedule redisign">
+      <created>1529856083781</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1529856083782</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Schedule redisign&#10;merge changes form master code">
+      <created>1529856583995</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1529856583995</updated>
+    </task>
+    <task id="LOCAL-00078" summary="ranglist redisign">
+      <created>1529859446741</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1529859446741</updated>
+    </task>
+    <task id="LOCAL-00079" summary="ranklist redesign">
+      <created>1529868036023</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1529868036023</updated>
+    </task>
+    <task id="LOCAL-00080" summary="ranklist-details&#10;Match-details &#10;Preliminary state">
+      <created>1529935638394</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1529935638395</updated>
+    </task>
+    <task id="LOCAL-00081" summary="V4 static files">
+      <created>1530016796806</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1530016796807</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="277" y="83" width="1186" height="824" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32963374" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32852387" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.44394618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26287743" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="R Packages" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Data View" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Deployment site" />
+    <MESSAGE value="Deployment site&#10;added contact form" />
+    <MESSAGE value="Deployment site&#10;some redesigns" />
+    <MESSAGE value="Deployment site&#10;input form bug fix" />
+    <MESSAGE value="Deployment site&#10;some code cleanup" />
+    <MESSAGE value="Deployment site&#10;added back button on input forms" />
+    <MESSAGE value="Deployment site&#10;ranglist detail design" />
+    <MESSAGE value="Deployment site&#10;Bonus Points Initial" />
+    <MESSAGE value="Deployment site&#10;Bonus Points database migrations" />
+    <MESSAGE value="Deployment site&#10;Bonus points user account" />
+    <MESSAGE value="Deployment site&#10;Bonus points user account&#10;DateTime format change" />
+    <MESSAGE value="Deployment site&#10;Old design backup" />
+    <MESSAGE value="Rebranding Base and index page" />
+    <MESSAGE value="Rebranding Base and index page&#10;add v2 templates" />
+    <MESSAGE value="Added choices bonus selector" />
+    <MESSAGE value="Profile prediction bonuses diplay" />
+    <MESSAGE value="Check for current time for input and edit predictions" />
+    <MESSAGE value="Click on match on schedule now shows user predictions for that match" />
+    <MESSAGE value="Non auto bonus calculator" />
+    <MESSAGE value="Schedule redisign" />
+    <MESSAGE value="Schedule redisign&#10;merge changes form master code" />
+    <MESSAGE value="ranglist redisign" />
+    <MESSAGE value="ranklist redesign" />
+    <MESSAGE value="ranklist-details&#10;Match-details &#10;Preliminary state" />
+    <MESSAGE value="V4 static files" />
+    <option name="LAST_COMMIT_MESSAGE" value="V4 static files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="7" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="86" column="7" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/contacts-success.html" />
+    <entry file="file://$PROJECT_DIR$/main_app/forms.py" />
+    <entry file="file://$PROJECT_DIR$/main_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/contacts.html" />
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconta_python/envs/django_env/Lib/site-packages/django/views/generic/edit.py" />
+    <entry file="file://C:/Anaconta_python/envs/django_env/Lib/site-packages/django/views/generic/detail.py" />
+    <entry file="file://C:/Anaconta_python/envs/django_env/Lib/site-packages/django/forms/forms.py" />
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/profile-history-and-points.html" />
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/profile-base.html" />
+    <entry file="file://$PROJECT_DIR$/static/css/main.css" />
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/profile-bonuses-list.html" />
+    <entry file="file://$PROJECT_DIR$/templates/test.html" />
+    <entry file="file://$PROJECT_DIR$/static/css/webflow.css" />
+    <entry file="file://$PROJECT_DIR$/static/css/milens-top-notch-project.webflow.css" />
+    <entry file="file://$PROJECT_DIR$/static/css/normalize.css" />
+    <entry file="file://$PROJECT_DIR$/templates/accounts/profile-base.html" />
+    <entry file="file://$PROJECT_DIR$/bonus_points/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/anaconda_python/envs/django_env/Lib/site-packages/django/views/generic/edit.py" />
+    <entry file="file://$PROJECT_DIR$/bonus_points/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bonus_points/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bonus_points/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/profile-bonuses-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/profile-history-and-points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="88" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bonus_points/management/commands/bp_calc_c1.py" />
+    <entry file="file://$PROJECT_DIR$/static/js/input_prediction_checker.js" />
+    <entry file="file://$PROJECT_DIR$/bonus_points/management/commands/bp_calc_non_auto.py" />
+    <entry file="file://$PROJECT_DIR$/templates/bonus_points/bonus-input-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/World_Cup_results/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bonus_points/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bonus_points/bonus-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/schedule_new.html" />
+    <entry file="file://$PROJECT_DIR$/matches/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="100" selection-start-line="20" selection-start-column="88" selection-end-line="20" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#341#1384#0" />
+            <element signature="e#511#1384#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/World_Cup_results/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/ranklist-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="e#3035#3060#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/ranklist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main_app/match-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="71" column="100" lean-forward="true" selection-start-line="71" selection-start-column="100" selection-end-line="71" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/matches/prediction-error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+          <folding>
+            <element signature="e#319#2448#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/matches/prediction-success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/matches/input-prediction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

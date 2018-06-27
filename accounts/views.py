@@ -57,6 +57,7 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
         post_data = dict(self.request.POST)
         post_data = {key: value for key, value in post_data.items() if key != "csrfmiddlewaretoken"}
         error_text = ''
+        tie_statuses = ['tie', 'penalties_home', 'penalties_guest']
         for key in post_data:
             if key == 'prediction_goals_home' or key == 'prediction_goals_guest':
                 try:
@@ -77,9 +78,10 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
                     checker = True
                     error_text = 'Головете не съотвестват на въведения изход от двубоя. Въведена е победа за гост, ' \
                                  'но головете на госта по-малко от тези на домакина!'
-                elif post_data[key][0] == 'tie' and goals_home != goals_guest:
+                elif post_data[key][0] in tie_statuses and goals_home != goals_guest:
                     checker = True
                     error_text = 'Головете на домакина и на госта не са равни!'
+
         current_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=15)
         match_start_time = self.object.match.match_start_time_utc
         # check for time before applying corrections
@@ -94,7 +96,9 @@ class UserUpdatePredictionView(LoginRequiredMixin, UpdateView):
             }
             return render(self.request, 'matches/prediction-error.html', content_dict)
         else:
-            self.object = form.save()
+            self.object = form.save(commit=False)
+            self.object.last_edit = datetime.datetime.utcnow()
+            self.object.save()
             return super().form_valid(form)
 
 
