@@ -194,8 +194,11 @@ h3,
 h4,
 h5,
 h6 {
+  color: white;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 h1 {
   font-size: 38px;

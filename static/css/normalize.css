@@ -206,9 +206,14 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
+  font-size: 25px;
+  color: white;
+  height: 50px;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
+  border: 4px solid #5da4e6;
+  background: #1c6bb4;
   /* 1 */
-  font: inherit;
+
   /* 2 */
   margin: 0;
   /* 3 */
