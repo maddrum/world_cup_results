@@ -33,6 +33,7 @@ class Matches(models.Model):
     score_home = models.IntegerField(default=0)
     score_guest = models.IntegerField(default=0)
     match_state = models.CharField(max_length=20, blank=True, choices=match_states)
+    penalties = models.BooleanField(default=False)
     phase = models.CharField(max_length=20, choices=phase_selector)
     match_is_over = models.BooleanField(default=False)
 
