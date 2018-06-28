@@ -56,7 +56,7 @@
                 </div>
             {% endfor %}
 
-          {#        EIGHT-FINALS#}
+            {#        EIGHT-FINALS#}
 
             <h1>Осминафинали</h1>
             {% for item in eight_finals %}
@@ -76,6 +76,9 @@
                                 <div class="score-txt">
                                     {% if item.match_is_over %}
                                         {{ item.score_home }}
+                                        {% if item.penalties %}
+                                            ({{ item.score_after_penalties_home }})
+                                        {% endif %}
                                     {% else %}
                                         ___
                                     {% endif %}
@@ -87,6 +90,9 @@
                                 <div class="score-txt">
                                     {% if item.match_is_over %}
                                         {{ item.score_guest }}
+                                        {% if item.penalties %}
+                                            ({{ item.score_after_penalties_guest }})
+                                        {% endif %}
                                     {% else %}
                                         ___
                                     {% endif %}
@@ -150,8 +156,6 @@
             <div class="match-date">{{ item.match_date }} {{ item.match_start_time }}</div>
         </div>
     {% endfor %}
-    </div>
-    </div>
 
 {% endblock %}
 
