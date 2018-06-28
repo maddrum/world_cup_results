@@ -10,6 +10,8 @@
     <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/webflow.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/milens-top-notch-project.webflow.css' %}" rel="stylesheet" type="text/css">
+    {% block header_link_load %}
+    {% endblock %}
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">WebFont.load({google: {families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]}});</script>
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script>
