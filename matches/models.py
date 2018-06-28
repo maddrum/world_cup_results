@@ -21,9 +21,10 @@ class Matches(models.Model):
     phase_selector = [('group_phase', 'Групова фаза'), ('eighth-finals', 'Осминафинали'),
                       ('quarterfinals', 'Четвъртфинал'), ('semifinals', 'Полуфинал'), ('little_final', 'Малък финал'),
                       ('final', 'Финал')]
-    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен'),
-                    ('penalties_home', 'Победа за домакин след дузпи'),
-                    ('penalties_guest', 'Победа за гост след дузпи')]
+    # match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен'),
+    #                 ('penalties_home', 'Победа за домакин след дузпи'),
+    #                 ('penalties_guest', 'Победа за гост след дузпи')]
+    match_states = [('home', 'Победа домакин'), ('guest', 'Победа гост'), ('tie', 'Равен')]
     country_home = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_home')
     country_guest = models.ForeignKey(Countries, on_delete=models.CASCADE, related_name='country_guest')
     match_number = models.IntegerField(blank=False, null=False)
@@ -32,7 +33,10 @@ class Matches(models.Model):
     match_start_time_utc = models.DateTimeField(default=timezone.now)
     score_home = models.IntegerField(default=0)
     score_guest = models.IntegerField(default=0)
+    score_after_penalties_home = models.IntegerField(default=0)
+    score_after_penalties_guest = models.IntegerField(default=0)
     match_state = models.CharField(max_length=20, blank=True, choices=match_states)
+    penalties = models.BooleanField(default=False)
     phase = models.CharField(max_length=20, choices=phase_selector)
     match_is_over = models.BooleanField(default=False)
 

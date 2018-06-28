@@ -72,6 +72,7 @@ def user_predictions_post_handle(request):
     goals_guest = 0
     has_error = False
     show_back_button = True
+    tie_statuses = ['tie', 'penalties_home', 'penalties_guest']
     # check if there is form POST
     if request.method != 'POST':
         error_text = 'Невалидна форма! Върни се в началото!'
@@ -133,20 +134,18 @@ def user_predictions_post_handle(request):
             state = predict_match_data[key][0]
             goals_home = predict_match_data[key][1]
             goals_guest = predict_match_data[key][2]
-            if state == 'home':
-                if goals_home <= goals_guest:
-                    error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за домакин, ' \
-                                 'но головете на домакина по-малко от тези на госта!'
-                    has_error = True
-            elif state == 'guest':
-                if goals_guest <= goals_home:
-                    error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за гост, ' \
-                                 'но головете на госта по-малко от тези на домакина!'
-                    has_error = True
-            else:
-                if goals_home != goals_guest:
-                    error_text = f'Головете мач {key} на домакина и на госта не са равни!'
-                    has_error = True
+            if state == 'home' and goals_home <= goals_guest:
+                error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за домакин, ' \
+                             'но головете на домакина по-малко от тези на госта!'
+                has_error = True
+            elif state == 'guest' and goals_guest <= goals_home:
+
+                error_text = f'Головете за мач {key} не съотвестват на въведения изход от двубоя. Въведена е победа за гост, ' \
+                             'но головете на госта по-малко от тези на домакина!'
+                has_error = True
+            elif state in tie_statuses and goals_home != goals_guest:
+                error_text = f'Головете мач {key} на домакина и на госта не са равни!'
+                has_error = True
 
     # write to database
     for key in predict_match_data:
