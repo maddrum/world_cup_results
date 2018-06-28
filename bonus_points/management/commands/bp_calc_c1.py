@@ -1,6 +1,6 @@
 from bonus_points.models import BonusDescription, BonusUserAutoPoints
 from matches.models import UserPredictions
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
 
