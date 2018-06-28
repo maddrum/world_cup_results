@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
+{% block body_tag_define %}
+    <body class="body-2">
+{% endblock %}
 {% block body_content %}
-    <h3>Влизаш в схемата...</h3>
-    <div class="inner">
-        Прогнозите дадени тук, могат да се правят само веднъж и не могат да бъдат редактирани впоследствие.<br>
-        Помисли добре и ако си сигурен, действай!
+    <div class="inner_page_header">
+        <div class="heading inner-ttl">Регистрация</div>
     </div>
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <ul class="actions">
-            <li><input type="submit" value="Изпрати!"></li>
-            <li><input type="reset" value="Изчисти" class="button alt"></li>
-        </ul>
+    <div class="content-wrp">
 
-    </form>
+        <h3>Влизаш в схемата...</h3>
+        <div class="inner">
+            Прогнозите дадени тук, могат да се правят само веднъж и не могат да бъдат редактирани впоследствие.<br>
+            Помисли добре и ако си сигурен, действай!
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <ul class="actions">
+                <li><input type="submit" value="Изпрати!"></li>
+                <li><input type="reset" value="Изчисти" class="button alt"></li>
+            </ul>
+
+        </form>
+    </div>
 {% endblock %}
