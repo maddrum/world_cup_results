@@ -69,7 +69,8 @@ class BonusPlayMainView(LoginRequiredMixin, FormView):
             }
             return render(self.request, 'matches/prediction-error.html', content_dict)
         else:
-            new_object = BonusUserPrediction(user=user, user_bonus_name=bonus_object, user_prediction=prediction)
+            new_object = BonusUserPrediction(user=user, user_bonus_name=bonus_object, user_prediction=prediction,
+                                             created_date=datetime.datetime.utcnow())
             new_object.save()
         return super().form_valid(form)
 

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+import datetime
 
 
 # Create your models here.
@@ -22,7 +23,6 @@ class BonusDescription(models.Model):
     # for bonuses which have selector field. This field contains comma separated options
     # only taken when 'choices' is selected for input_field
 
-
     def __str__(self):
         return str(self.bonus_name) + ' и вземи ' + str(self.points) + ' точки'
 
@@ -36,6 +36,7 @@ class BonusUserPrediction(models.Model):
     points_gained = models.IntegerField(default=0)
     summary_text = models.CharField(max_length=500)
     user_participate = models.BooleanField(default=True)
+    created_date = models.DateTimeField(default=datetime.datetime.utcnow)
 
     def __str__(self):
         return str(self.user) + ' ' + str(self.user_bonus_name)
