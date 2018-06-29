@@ -194,8 +194,11 @@ h3,
 h4,
 h5,
 h6 {
+  color: white;
+  font-family: 'Dusha fifa world cup 2018', sans-serif;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 h1 {
   font-size: 38px;
@@ -413,14 +416,13 @@ textarea.w-select {
   z-index: -100;
 }
 .w-file-upload-default,
-.w-file-upload-uploading,
-.w-file-upload-success {
+.w-file-upload-uploading {
   display: inline-block;
   color: #333333;
 }
-.w-file-upload-error {
-  display: block;
-  margin-top: 10px;
+.w-file-upload-error,
+.w-file-upload-success {
+  display: flex;
 }
 .w-file-upload-default.w-hidden,
 .w-file-upload-uploading.w-hidden,
@@ -437,7 +439,7 @@ textarea.w-select {
   padding: 8px 12px 8px 40px;
   border: 1px solid #cccccc;
   background-color: #fafafa;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBvcGFjaXR5PSIuMiIgZD0iTTE1IDMwYTE1IDE1IDAgMSAxIDAtMzAgMTUgMTUgMCAwIDEgMCAzMHptMC0zYTEyIDEyIDAgMSAwIDAtMjQgMTIgMTIgMCAwIDAgMCAyNHoiLz48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIG9wYWNpdHk9Ii43NSIgZD0iTTAgMTVBMTUgMTUgMCAwIDEgMTUgMHYzQTEyIDEyIDAgMCAwIDMgMTVIMHoiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgYXR0cmlidXRlVHlwZT0iWE1MIiBkdXI9IjAuNnMiIGZyb209IjAgMTUgMTUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0bz0iMzYwIDE1IDE1IiB0eXBlPSJyb3RhdGUiLz48L3BhdGg+PC9zdmc+");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSIjQ0NDIiBkPSJNMTUgMzBhMTUgMTUgMCAxIDEgMC0zMCAxNSAxNSAwIDAgMSAwIDMwem0wLTNhMTIgMTIgMCAxIDAgMC0yNCAxMiAxMiAwIDAgMCAwIDI0eiIvPjxwYXRoIGZpbGw9IiMzMzMiIGQ9Ik0wIDE1QTE1IDE1IDAgMCAxIDE1IDB2M0ExMiAxMiAwIDAgMCAzIDE1SDB6Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIGF0dHJpYnV0ZVR5cGU9IlhNTCIgdHlwZT0icm90YXRlIiBmcm9tPSIwIDE1IDE1IiB0bz0iMzYwIDE1IDE1IiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9wYXRoPjwvZz48L3N2Zz4=");
   background-position: 12px 50%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
@@ -458,11 +460,9 @@ textarea.w-select {
 }
 .w-file-remove-link {
   margin-top: 3px;
-  margin-left: 10px;
-  width: auto;
-  height: auto;
-  padding: 3px;
-  display: block;
+  width: 16px;
+  height: 16px;
+  display: flex;
   cursor: pointer;
 }
 .w-icon-file-upload-remove {
@@ -470,8 +470,8 @@ textarea.w-select {
   font-size: 10px;
 }
 .w-file-upload-error-msg {
-  display: inline-block;
   color: #ea384c;
+  margin-top: 10px;
   padding: 2px 0;
 }
 .w-file-upload-info {

@@ -25,18 +25,18 @@ def user_predictions_start(request):
         date = datetime.datetime.now().date()
     utc_current_time_delta = datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
 
-    # # test
-    # test_days = 7
-    # test_days1 = test_days - 3
-    # test_hours = 0
-    # test_minutes = 0
-    # test_timedelta = datetime.timedelta(days=test_days, minutes=test_minutes, hours=test_hours)
-    # test_timedelta1 = datetime.timedelta(days=test_days1)
-    # utc_current_time_delta = utc_current_time_delta + test_timedelta
-    # date = date + test_timedelta1
-    # print(date)
-    # print(utc_current_time_delta)
-    # # end test
+    # test
+    test_days = 1
+    test_days1 = test_days
+    test_hours = -8
+    test_minutes = 0
+    test_timedelta = datetime.timedelta(days=test_days, minutes=test_minutes, hours=test_hours)
+    test_timedelta1 = datetime.timedelta(days=test_days1)
+    utc_current_time_delta = utc_current_time_delta + test_timedelta
+    date = date + test_timedelta1
+    print(date)
+    print(utc_current_time_delta)
+    # end test
 
     today_match = Matches.objects.filter(match_date=date, match_start_time_utc__gte=utc_current_time_delta)
 

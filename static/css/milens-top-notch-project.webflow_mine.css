@@ -138,24 +138,6 @@
   text-align: center;
 }
 
-.heading.tab-heading {
-  margin-top: 62px;
-  color: #044a9e;
-  font-size: 36px;
-  text-align: center;
-}
-
-.heading.tab-heading.history-ttl {
-  margin-top: 20px;
-  margin-bottom: 29px;
-  font-size: 26px;
-}
-
-.heading.tab-heading.history-ttl.red {
-  color: #d51e3a;
-  font-size: 30px;
-}
-
 .ttl-wrp {
   position: relative;
 }
@@ -261,34 +243,6 @@
   margin-top: 304px;
 }
 
-.text-block.tab {
-  margin-top: 18px;
-  color: #044a9e;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.text-block.tab.remark {
-  margin-top: 62px;
-  margin-bottom: 62px;
-  padding-top: 36px;
-  padding-bottom: 36px;
-  border-top: 3px solid #d51e3a;
-  border-bottom: 3px solid #d51e3a;
-}
-
-.text-block.histprylist {
-  margin-top: 31px;
-  margin-bottom: 31px;
-  font-size: 18px;
-  text-align: center;
-  text-transform: none;
-}
-
-.text-block.histprylist.points-indicator {
-  color: #d51e3a;
-}
-
 .footer {
   display: -webkit-box;
   display: -webkit-flex;
@@ -383,11 +337,6 @@
   box-shadow: 1px 1px 14px 0 #044a9e;
 }
 
-.team.team-profile {
-  background-color: #044a9e;
-  box-shadow: none;
-}
-
 .score {
   display: block;
   width: 70%;
@@ -397,11 +346,6 @@
   border-radius: 8px;
   background-color: #f3daa8;
   box-shadow: 1px 1px 14px 0 #044a9e;
-}
-
-.score.scoreprofile {
-  background-color: #f3daa8;
-  box-shadow: none;
 }
 
 .column {
@@ -425,10 +369,6 @@
   font-size: 36px;
 }
 
-.match-number.matchnumberprofile {
-  color: #044a9e;
-}
-
 .match-date {
   margin: 38px;
   font-family: Montserrat, sans-serif;
@@ -441,10 +381,6 @@
   padding-top: 29px;
   color: #044a9e;
   font-size: 36px;
-}
-
-.team-ttl.ttlprofile {
-  color: #fff;
 }
 
 .score-txt {
@@ -587,14 +523,6 @@
   font-family: 'Dusha fifa world cup 2018', sans-serif;
   text-align: center;
   text-transform: uppercase;
-}
-
-.game-single.inprofile {
-  margin-top: 0px;
-  margin-bottom: 43px;
-  padding-top: 18px;
-  padding-bottom: 78px;
-  border-bottom: 1px solid #5da4e6;
 }
 
 .game-summary {
@@ -768,7 +696,7 @@
   box-shadow: 6px 6px 28px 8px #184d8d;
   font-family: 'Dusha fifa world cup 2018', sans-serif;
   color: #044a9e;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -815,132 +743,6 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-}
-
-.tabs-menu {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 65px;
-  margin-right: auto;
-  margin-left: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.tabs {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.tab-link {
-  width: 150px;
-  margin-right: 2px;
-  padding-right: 0px;
-  padding-left: 0px;
-  border-top: 1px none #000;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #fafafa;
-  box-shadow: 0 -6px 0 -1px #f3daa8, inset 0 -7px 6px -7px #eceff1;
-}
-
-.tab-link:hover {
-  background-color: #fff;
-}
-
-.tab-link.w--current {
-  z-index: 5;
-  padding-right: 0px;
-  padding-left: 0px;
-  background-color: #fff;
-  box-shadow: 0 -6px 0 -1px #f3daa8;
-}
-
-.tab-text {
-  display: block;
-  margin-top: 16px;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: 'Dusha fifa world cup 2018', sans-serif;
-  color: #044a9e;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.tab-pane-tab-1 {
-  border-style: none;
-  border-top-width: 1px;
-  border-top-color: #f3daa8;
-}
-
-.tabs-content {
-  min-height: 500px;
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 0 20px -3px rgba(4, 74, 158, .35);
-}
-
-.logout-btn {
-  display: block;
-  width: 180px;
-  height: 50px;
-  margin: 56px auto 125px;
-  padding-top: 16px;
-  border-radius: 15px;
-  background-color: #5da4e6;
-  font-family: 'Dusha fifa world cup 2018', sans-serif;
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.logout-btn:hover {
-  background-color: #d51e3a;
-}
-
-.logout-gif {
-  display: block;
-  width: 250px;
-  margin: 40px auto;
-  border-style: none;
-  border-width: 8px 1px 8px 8px;
-  border-color: #f3daa8 #d51e3a;
-  border-radius: 15px;
-}
-
-.tab-pane-tab-5 {
-  border-radius: 15px;
-}
-
-.game-history {
-  margin-top: 50px;
-  margin-bottom: 42px;
-}
-
-.unordered-list {
-  color: #1c6bb4;
-  font-size: 30px;
-  text-align: center;
-  list-style-type: none;
-}
-
-.list-item-4 {
-  height: 30px;
-}
-
-.list-item-5 {
-  height: 30px;
-}
-
-.tab-pane-tab-3 {
-  padding-right: 45px;
-  padding-bottom: 42px;
-  padding-left: 45px;
 }
 
 @media (max-width: 991px) {
@@ -1163,9 +965,6 @@
   .stars-small {
     right: 71px;
   }
-  .tab-link.w--current {
-    width: 120px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -1258,23 +1057,6 @@
   .star-big {
     left: -307px;
   }
-  .tab-link {
-    width: 100px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .tab-link.w--current {
-    width: 100px;
-  }
-  .tab-text {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 12px;
-  }
-  .tabs-content {
-    border-radius: 0px;
-  }
 }
 
 @media (max-width: 479px) {
@@ -1306,14 +1088,6 @@
   }
   .heading.inner-ttl.bravo {
     margin-top: -77px;
-  }
-  .heading.tab-heading.history-ttl {
-    margin-bottom: 30px;
-    font-size: 26px;
-  }
-  .heading.tab-heading.history-ttl.red {
-    margin-top: 24px;
-    font-size: 26px;
   }
   .ttl-wrp {
     top: 106px;
@@ -1349,13 +1123,6 @@
   .text-block.white.message {
     margin-top: 296px;
     margin-bottom: 296px;
-  }
-  .text-block.tab.remark {
-    font-size: 14px;
-  }
-  .text-block.histprylist {
-    margin-top: 8px;
-    font-size: 14px;
   }
   .footer {
     position: relative;
@@ -1442,20 +1209,6 @@
   }
   .ronaldo {
     bottom: 183px;
-  }
-  .tabs {
-    margin-top: 34px;
-  }
-  .tab-link {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  .tab-text {
-    font-size: 10px;
-  }
-  .tabs-content {
-    padding-right: 9px;
-    padding-left: 9px;
   }
 }
 
