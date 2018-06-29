@@ -6,83 +6,34 @@
 {% endblock %}
 
 {% block body_content %}
-    <div class="inner_page_header">
-        <div class="heading inner-ttl">Здравей, {{ user }}!</div>
-    </div>
-    <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
-        <div class="tabs-menu w-tab-menu">
-            <a href="{% url 'accounts:profile' %}" class="tab-link w-inline-block w-tab-link w--current">
-                <div class="tab-text">Прогнози</div>
-            </a>
-            <a href="{% url 'accounts:profile_history' %}" class="tab-link w-inline-block w-tab-link">
-                <div class="tab-text">История</div>
-            </a>
-            <a href="{% url 'accounts:profile_bonus' %}" class="tab-link w-inline-block w-tab-link">
-                <div class="tab-text">Бонуси</div>
-            </a>
-            <a href="{% url 'accounts:profile_settings' %}" class="tab-link w-inline-block w-tab-link">
-                <div class="tab-text">Настройки</div>
-            </a>
-            <a data-w-tab="Tab 5" class="tab-link w-inline-block w-tab-link">
-                <div class="tab-text">Излез</div>
-            </a>
+    <div class="content-wrp">
+        <div class="inner_page_header">
+            <div class="heading inner-ttl">Здравей, {{ user }}!</div>
         </div>
-        <div class="tabs-content w-tab-content">
-            {% block profile_content %}
-            {% endblock %}
+        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tabs-menu w-tab-menu">
+                <a href="{% url 'accounts:profile' %}" class="tab-link w-inline-block w-tab-link w--current">
+                    <div class="tab-text">Прогнози</div>
+                </a>
+                <a href="{% url 'accounts:profile_history' %}" class="tab-link w-inline-block w-tab-link">
+                    <div class="tab-text">История</div>
+                </a>
+                <a href="{% url 'accounts:profile_bonus' %}" class="tab-link w-inline-block w-tab-link">
+                    <div class="tab-text">Бонуси</div>
+                </a>
+                <a href="{% url 'accounts:profile_settings' %}" class="tab-link w-inline-block w-tab-link">
+                    <div class="tab-text">Настройки</div>
+                </a>
+                <a href="{% url 'accounts:logout_confirm' %}" class="tab-link w-inline-block w-tab-link">
+                    <div class="tab-text">Излез</div>
+                </a>
+            </div>
+            <div class="tabs-content w-tab-content">
+
+
+                {% block profile_content %}
+                {% endblock %}
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 {% endblock %}
-
-
-
-<div class="content-wrp" style="margin-top: 30px;margin-bottom: 40px">
-    <div class="row profile">
-        <div class="col-md-3">
-            <div class="profile-sidebar">
-                <div class="profile-usertitle-name" align="center">Здравей, {{ user }}!</div>
-
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li {% block predictions_menu %}{% endblock %}>
-                            <a>
-                                <i class="glyphicon glyphicon-hand-right"></i>Твоите прогнози </a>
-                        </li>
-
-                        <li {% block points_menu %}{% endblock %}>
-                            <a>
-                                <i class="glyphicon glyphicon-time"></i>Точки и история </a>
-                        </li>
-
-                        <li {% block bonuses_menu %}{% endblock %}>
-                            <a>
-                                <i class="glyphicon glyphicon-check"></i>Бонуси </a>
-                        </li>
-
-                        <li>
-                            <a href="{% url 'accounts:logout' %}">
-                                <i class="glyphicon glyphicon-log-out"></i>Излез </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- END MENU -->
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="profile-content">
-
-            </div>
-        </div>
-    </div>
-</div>
-
-

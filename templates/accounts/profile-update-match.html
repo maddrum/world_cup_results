@@ -1,18 +1,22 @@
 {% extends 'accounts/profile-base.html' %}
-{% load staticfiles %}
-{% block profile_html_title %}
-    Профил
+
+{% block body_tag_define %}
+    <body class="body-2">
 {% endblock %}
-{% block predictions_menu %}class="active"{% endblock %}
 {% block  profile_content %}
-    <h3>{{ update_match }}</h3>
-    <form method="post">
-        {{ form }}
-        {% csrf_token %}
-        <ul class="actions">
-            <li><input type="submit" value="Промяна!"></li>
-            <li><input type="reset" value="Изчисти" class="button alt"></li>
-        </ul>
-    </form>
+    <div class="content-wrp">
+        <div class="game-single inprofile">
+            <div class="w-row">
+                <h1>{{ update_match }}</h1>
+                <form method="post">
+                    {{ form }}
+                    {% csrf_token %}
+                    <input type="submit" data-w-id="8782863a-1d5d-0d40-92f8-45790f30b309" class="submit-btn w-button"
+                           value="Корекция">
+
+                </form>
+            </div>
+        </div>
+
 
 {% endblock %}

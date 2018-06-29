@@ -5,34 +5,59 @@
 {% endblock %}
 {% block predictions_menu %}class="active"{% endblock %}
 {% block  profile_content %}
-    <h3>Твоите прогнози</h3>
-    <p>Тук са всички прогнози, които все още могат да се коригират(или с други думи има повече от 30 мин до този
-        мач)</p>
-    {% for item in predictions %}
-        <div class="row inner">
-            <div class="col-md-4 col-sm-12">
-                Мач {{ item.match.match_number }}: {{ item.match.country_home }}-
-                {{ item.match.country_guest }}</div>
-            <div class="col-md-4 col-sm-12">
-                {% if item.prediction_match_state == "home" %}
-                    | победа {{ item.match.country_home }} |
-                {% elif item.prediction_match_state == "guest" %}
-                    | победа {{ item.match.country_guest }} |
-                {% elif item.prediction_match_state == 'penalties_home' %}
-                    | Победа за {{ item.match.country_home }} след дузпи |
-                {% elif item.prediction_match_state == 'penalties_guest' %}
-                    | Победа за {{ item.match.country_guest }} след дузпи |
-                {% else %}
-                    | равен |
-                {% endif %}
-                <br>
-                | резултат: {{ item.prediction_goals_home }}:{{ item.prediction_goals_guest }}|
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="../profile-match-update/{{ item.id }}" class="button special small">Корекция</a>
-            </div>
+    <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+        <h1 class="heading tab-heading">Твоите прогнози за днес</h1>
+        <div class="text-block tab">Тук са всички прогнози, които все още могат да се коригират<br>(или с други думи има
+            повече от 30 мин до този мач)<br></div>
+    </div>
 
+    {% for item in predictions %}
+        <div class="game-single inprofile">
+            <div class="w-row">
+                <div class="w-col w-col-12">
+                    <h1 class="heading tab-heading history-ttl">Твоята прогноза за
+                        мач {{ item.match.match_number }}</h1>
+                </div>
+                <div class="column-4 w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                    <div class="team team-profile">
+                        <div class="team-ttl ttlprofile">{{ item.match.country_home }}</div>
+                    </div>
+                </div>
+                <div class="column-3 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                    <div class="score scoreprofile">
+                        <div class="score-txt">{{ item.prediction_goals_home }}</div>
+                    </div>
+                </div>
+                <div class="column-2 w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1">
+                    <div class="score scoreprofile">
+                        <div class="score-txt">{{ item.prediction_goals_guest }}</div>
+                    </div>
+                </div>
+                <div class="column w-col w-col-5 w-col-medium-5 w-col-small-5 w-col-tiny-5">
+                    <div class="team team-profile">
+                        <div class="team-ttl ttlprofile">Португалия</div>
+                    </div>
+                </div>
+
+                <div class="w-col w-col-12">
+                    {% if item.prediction_match_state == "home" %}
+                        <h1 class="heading tab-heading history-ttl">Победа за {{ item.match.country_home }}</h1>
+                    {% elif item.prediction_match_state == "guest" %}
+                        <h1 class="heading tab-heading history-ttl">Победа за {{ item.match.country_guest }}</h1>
+                    {% elif item.prediction_match_state == 'penalties_home' %}
+                        <h1 class="heading tab-heading history-ttl">Победа след дузпи
+                            за {{ item.match.country_home }}</h1>
+                    {% elif item.prediction_match_state == 'penalties_guest' %}
+                        <h1 class="heading tab-heading history-ttl">Победа след дузпи
+                            за {{ item.match.country_guest }}</h1>
+                    {% else %}
+                        | равен |
+                    {% endif %}
+                    <h1 class="heading tab-heading history-ttl"><a href="../profile-match-update/{{ item.id }}"
+                                                                   class="button special small">Корекция</a></h1>
+                </div>
+            </div>
         </div>
-        <br>
     {% endfor %}
 {% endblock %}
+

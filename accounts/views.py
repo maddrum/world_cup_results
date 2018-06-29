@@ -160,3 +160,7 @@ class ProfileBonusView(ListView):
         else:
             context['auto_points'] = False
         return context
+
+
+class ProfileLogoutConfirm(TemplateView):
+    template_name = 'accounts/logout-confirm.html'
