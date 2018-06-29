@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block body_content %}
+    <div class="inner_page_header">
+        <div class="heading inner-ttl">Здравей, {{ user }}!</div>
+    </div>
     <div class="content-wrp">
-        <div class="inner_page_header">
-            <div class="heading inner-ttl">Здравей, {{ user }}!</div>
-        </div>
         <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
             <div class="tabs-menu w-tab-menu">
                 <a href="{% url 'accounts:profile' %}" class="tab-link w-inline-block w-tab-link w--current">
