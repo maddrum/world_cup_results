@@ -1,19 +1,22 @@
 {% extends 'accounts/profile-base.html' %}
-{% block settings_menu %}class="active"{% endblock %}
+
 {% block  profile_content %}
-    <h3>Настройки</h3>
-    <p>Смени своите настройки тук</p>
-    <label>Парола:</label><a href="{% url 'accounts:password_change' %}">Натистни тук за смяна на паролата!</a>
-    <br> <br>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
+    <h1 class="heading tab-heading">Настройки</h1>
+    <div class="text-block tab">Смени своите настройки тук.<br></div>
 
-        <ul class="actions">
-            <li><input type="submit" value="Промяна!"></li>
-            <li><input type="reset" value="Изчисти" class="button alt"></li>
-        </ul>
 
-    </form>
+    <div class="form-txt">
+        <div class="text-block histprylist bonus-list">
+            <label>Парола:</label><a href="{% url 'accounts:password_change' %}">Натистни тук за смяна на паролата!</a>
+        </div>
+        <div class="text-block histprylist bonus-list">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" data-w-id="8782863a-1d5d-0d40-92f8-45790f30b309" class="submit-btn w-button"
+                       value="Корекция">
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

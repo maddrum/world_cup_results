@@ -2,11 +2,10 @@
 
 
 {% block  profile_content %}
-    <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+
         <h1 class="heading tab-heading">Твоите прогнози за днес</h1>
         <div class="text-block tab">Тук са всички прогнози, които все още могат да се коригират<br>(или с други думи има
             повече от 30 мин до този мач)<br></div>
-    </div>
 
     {% for item in predictions %}
         <div class="game-single inprofile">
