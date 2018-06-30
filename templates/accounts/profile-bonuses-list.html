@@ -9,7 +9,8 @@
                     от което можеш да спечелиш
                     <b>{{ item.user_bonus_name.points }}</b> точки
                 </div>
-                <div class="text-block histprylist bonus-list"><em>*Твоят отговор: {{ item.user_prediction }}<br></em>
+                <div class="text-block histprylist bonus-list">
+                    <em>*Твоят отговор: {{ item.user_prediction }}<br></em>
                 </div>
             {% endfor %}
         {% endif %}
@@ -28,14 +29,6 @@
             <p>Не си участвал за никакви бонуси все още!</p>
         {% endif %}
 
-    </ul>
-
-    <h1 class="heading tab-heading history-ttl red">От това спечели:</h1>
-    <ul class="unordered-list w-list-unstyled">
-        <li class="bonus-wrp">
-            <div class="text-block histprylist bonus-list">Познай шампиона от което можеш да спечелиш
-                <strong>50 </strong>точки<br></div>
-        </li>
     </ul>
 
     <h1 class="heading tab-heading history-ttl red">От това спечели:</h1>
