@@ -75,16 +75,18 @@
 {% block body_content %}
 {% endblock %}
 
-<div class="footer">
-    <div class="foot-wrp">
-        <div class="text-block ftr">
-            design:брат му | backend: maddrum | За контакти: <br>
+{% block footer %}
+    <div class="footer">
+        <div class="foot-wrp">
+            <div class="text-block ftr">
+                design:брат му | backend: maddrum | За контакти: <br>
+            </div>
+            <a href="{% url 'main_app:site_contact' %}" data-w-id="81ebefb1-c4c9-0842-eeae-60febe184d79"
+               class="footer-btn w-button">Удри тук</a>
         </div>
-        <a href="{% url 'main_app:site_contact' %}" data-w-id="81ebefb1-c4c9-0842-eeae-60febe184d79"
-           class="footer-btn w-button">Удри тук</a>
-
     </div>
-</div>
+{% endblock %}
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"
