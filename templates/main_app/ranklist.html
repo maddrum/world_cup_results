@@ -10,7 +10,32 @@
     </div>
     <div class="content-wrp">
         {% for item in ranklist %}
-            {% if forloop.counter > 0 and forloop.counter < 4 %}
+            {% if forloop.counter == 1 %}
+                <div class="rankings1 w-row">
+                    <div class="badge w-col w-col-3 w-col-stack"><img
+                            src="{% static 'images/Rank1.png' %}" width="431"
+                            srcset="{% static 'images/Rank1-p-500.png' %} 500w, {% static 'images/Rank1.png' %} 862w"
+                            sizes="(max-width: 479px) 48vw, (max-width: 991px) 49vw, 23vw"
+                            class="image first"></div>
+                    <div class="info-wirp w-col w-col-9 w-col-stack">
+                        <div class="info-table w-row">
+                            <div class="w-col w-col-4">
+                                <div class="rarnk-txt position">{{ forloop.counter }}</div>
+                            </div>
+                            <div class="w-col w-col-4">
+                                <div class="rarnk-txt user">
+                                    <a href="../rankilst-detail/{{ item.user_id.id }}"
+                                       style="color: white">{{ item.user_id }}</a>
+                                </div>
+                            </div>
+                            <div class="w-col w-col-4">
+                                <div class="rarnk-txt points">{{ item.points }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% elif forloop.counter > 1 and forloop.counter < 4 %}
                 <div class="rankings1 w-row">
                     <div class="badge w-col w-col-3 w-col-stack"><img
                             src="{% static 'images' %}/Rank{{ forloop.counter }}.png"
@@ -37,7 +62,6 @@
                 </div>
             {% elif forloop.counter > 3 and forloop.counter < 7 %}
                 <div class="rankings2 w-row">
-
                     <div class="badge w-col w-col-3 w-col-stack"><img src="{% static 'images/Rank4.png' %}" width="130"
                                                                       class="image napadatel"></div>
                     <div class="info-wirp napadatel-txt w-col w-col-9 w-col-stack">
