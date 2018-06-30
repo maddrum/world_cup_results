@@ -1,7 +1,8 @@
-from django.views.generic import TemplateView, ListView, CreateView, DetailView
+from django.views.generic import TemplateView, ListView, CreateView
 from matches.models import Matches, UserScore, UserPredictions
 from main_app.models import SiteContact
 from main_app.forms import ContactForm
+from django.contrib.auth import get_user_model
 import datetime
 
 
@@ -52,9 +53,15 @@ class RankilstUserPoints(ListView):
 
     def get_queryset(self):
         user_id = int(self.kwargs['pk'])
+        self.username = get_user_model().objects.get(id=user_id)
         queryset = UserPredictions.objects.filter(user_id=user_id, match__match_is_over=True).order_by(
             '-match__match_start_time_utc')
         return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['username'] = self.username
+        return context
 
 
 class SiteContactView(CreateView):

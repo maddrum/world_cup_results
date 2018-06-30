@@ -3,76 +3,83 @@
     <body class="body-2">
 {% endblock %}
 {% block body_content %}
-
-    {% for item in ranklist %}
-        {% if forloop.counter == 1 %}
-            <div class="inner_page_header">
-                <div class="heading results_ttl">От къде са точките на {{ item.user_id }}</div>
-            </div>
-            <div class="content-wrp">
-        {% endif %}
-        <div class="rankings1 w-row">
-            <div class="w-row">
-                <div class="match-number" align="center">
-                    {{ item.match }}
+    <div class="inner_page_header">
+        <div class="heading inner-ttl">От къде са точките на {{ username }}</div>
+    </div>
+    <div class="content-wrp">
+        {% for item in ranklist %}
+            <div class="rankings1 w-row">
+                <div class="w-row">
+                    <div class="match-number" align="center">
+                        {{ item.match }}
+                    </div>
+                    <div class="w-col w-col-6 w-col-stack w-row">
+                        <h3>Прогнозирал:</h3>
+                        <ul class="unordered-list w-list-unstyled">
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    {% if item.prediction_match_state == 'home' %}
+                                        Победа за {{ item.match.country_home }}
+                                    {% elif item.prediction_match_state == 'guest' %}
+                                        Победа за {{ item.match.country_guest }}
+                                    {% else %}
+                                        Равен
+                                    {% endif %}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    Голове за {{ item.match.country_home }} : {{ item.prediction_goals_home }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    Голове за {{ item.match.country_guest }} : {{ item.prediction_goals_guest }}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-col w-col-6 w-col-stack">
+                        <h3>В действителсност</h3>
+                        <ul class="unordered-list w-list-unstyled">
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    {% if item.match.match_state == 'home' %}
+                                        Победа за {{ item.match.country_home }}
+                                    {% elif item.match.match_state == 'guest' %}
+                                        Победа за {{ item.match.country_guest }}
+                                    {% else %}
+                                        Равен
+                                    {% endif %}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    Голове за {{ item.match.country_home }} : {{ item.match.score_home }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-block histprylist bonus-list white">
+                                    Голове за {{ item.match.country_guest }} : {{ item.match.score_guest }}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="w-col w-col-4 w-col-stack w-row">
-                    <h5>Прогнозирал:</h5>
-                    <ul>
-                        <li>
-                            {% if item.prediction_match_state == 'home' %}
-                                Победа за {{ item.match.country_home }}
-                            {% elif item.prediction_match_state == 'guest' %}
-                                Победа за {{ item.match.country_guest }}
-                            {% else %}
-                                Равен
-                            {% endif %}
-                        </li>
-                        <li>
-                            Голове за {{ item.match.country_home }} : {{ item.prediction_goals_home }}
-                        </li>
-                        <li>
-                            Голове за {{ item.match.country_guest }} : {{ item.prediction_goals_guest }}
-                        </li>
-                    </ul>
-                </div>
-                <div class="w-col w-col-4 w-col-stack">
-                    <h5>В действителсност</h5>
-                    <ul>
-                        <li>
-                            {% if item.match.match_state == 'home' %}
-                                Победа за {{ item.match.country_home }}
-                            {% elif item.match.match_state == 'guest' %}
-                                Победа за {{ item.match.country_guest }}
-                            {% else %}
-                                Равен
-                            {% endif %}
-                        </li>
-                        <li>
-                            Голове за {{ item.match.country_home }} : {{ item.match.score_home }}
-                        </li>
-                        <li>
-                            Голове за {{ item.match.country_guest }} : {{ item.match.score_guest }}
-                        </li>
-                    </ul>
+                <div class="w-row">
+                    <h2>получени точки за срещата</h2>
+                    <div class="text-block white" style="text-align: left">
+                        {{ item.prediction_note|linebreaks }}
+                    </div>
+                    <div style="padding-top: 20px">
+                        <h1>Общо точки: {{ item.points_gained }} </h1>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        {% endfor %}
 
-        <div class="w-row">
-            <h5>получени точки за срещата</h5>
-            <div class="w-row" style="border-bottom: dashed 2px white">
-                {{ item.prediction_note|linebreaks }}
-            </div>
-            <div style="padding-top: 20px">
-                <h5>Общо точки: {{ item.points_gained }} </h5>
-            </div>
-        </div>
-
-    {% endfor %}
-
-</div>
+    </div>
 
 
 {% endblock %}
