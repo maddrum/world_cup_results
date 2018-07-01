@@ -84,7 +84,6 @@ class MatchDetailView(ListView):
         pk = self.kwargs['pk']
         queryset = UserPredictions.objects.filter(match__match_number=pk, match__match_is_over=True).order_by('user_id')
         queryset_match = Matches.objects.filter(match_number=pk)
-        print(queryset_match)
         for item in queryset_match:
             self.home_team = item.country_home
             self.guest_team = item.country_guest

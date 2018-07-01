@@ -14,5 +14,12 @@ class Command(BaseCommand):
                 print(f'created: {item.creation_time}')
                 print(f'edited: {item.last_edit}')
                 print(f'Time Delta: {time_delta_creation_last_edit}')
-
-        self.stdout.write(self.style.SUCCESS('all corrections were displayed'))
+            if item.match.match_number >= 45:
+                if item.match.match_start_time_utc < item.last_edit or item.match.match_start_time_utc < item.last_edit:
+                    print('|||||||||||CHEATER!!!!||||||||||')
+                    print(item)
+                    print(f'created: {item.creation_time}')
+                    print(f'edited: {item.last_edit}')
+                    print(f'match start time: {item.match.match_start_time_utc}')
+        print()
+        self.stdout.write(self.style.SUCCESS('Script was ran successfully!'))
