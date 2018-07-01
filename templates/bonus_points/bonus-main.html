@@ -5,7 +5,7 @@
 {% block body_content %}
 
     <div class="inner_page_header">
-        <div class="heading inner-ttl">Бонус програма</div>
+        <div class="heading inner-ttl">Бонуси</div>
     </div>
     <div class="content-wrp">
         <div class="tabs-content w-tab-content">
@@ -21,7 +21,7 @@
                             <div class="text-block histprylist bonus-list">
                                 <b>{{ item }}</b> -->
                                 {% if item.participate_link %}
-                                    <a href="../{{ item.input_filed }}/{{ item.id }}">ВКЛЮЧИ СЕ</a>
+                                    <a href="../{{ item.input_filed }}/{{ item.id }}" class="buttons small-btn">ВКЛЮЧИ СЕ!</a>
                                 {% else %}
                                     Вече си в схемата!
                                 {% endif %}

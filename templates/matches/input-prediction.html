@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body_tag_define %}
-    <body class="body-2" xmlns="http://www.w3.org/1999/html">
+    <body class="body-2">
 {% endblock %}
 
 {% block body_content %}
@@ -28,10 +28,10 @@
                     непосредствено преди самите дузпи да започнат. Той трябва да е равен. <br>Например - Уругвай шунтира
                     Португалия с един гол първото полувреме.
                     Португалия връщат гола във второто, но в продълженията Кристиано Роналдо е прекалено зает с
-                    прическата си и те завършват 1 : 1. Това ще е и "точния" резултат един-на-един /не моим ги изравним/.
+                    прическата си и те завършват 1 : 1. Това ще е и "точния" резултат един-на-един /не моим ги
+                    изравним/.
                 </li>
             </ul>
-
         </div>
         {% if form %}
             <form method="post" action="{% url 'matches:prediction_processor' %}">
@@ -63,7 +63,8 @@
                                 <option value="guest">Победа за {{ item.country_guest }}</option>
                                 {#                                <option value="tie">Равен</option>#}
                                 <option value="penalties_home">Победа за {{ item.country_home }} след дузпи</option>
-                                <option value="penalties_guest">Победа за {{ item.country_guest }} след дузпи</option>
+                                <option value="penalties_guest">Победа за {{ item.country_guest }} след дузпи
+                                </option>
                             </select>
 
                             <input type="text" name="{{ item.match_number }}_goals_home"
@@ -78,22 +79,25 @@
                     </div>
                 {% endfor %}
                 <div class="buttons">
-                    <input type="submit" data-w-id="8782863a-1d5d-0d40-92f8-45790f30b309" class="submit-btn w-button"
+
+                    <input type="submit" data-w-id="8782863a-1d5d-0d40-92f8-45790f30b309"
+                           class="submit-btn w-button"
+                           style="transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"
                            value="дай прогноза">
                 </div>
-
-
             </form>
+
         {% else %}
             <div class="w-row">
                 <div class="text-block white">
                     <br>
                     <em>Не можеш да даваш вече прогнози за днешния ден, или днес няма мачаове.
-                        <p>Върни се утре, за да дадеш своите прогнози, а до тогава не оставяй бирата да се стопля!</p>
+                        <p>Върни се утре, за да дадеш своите прогнози, а до тогава не оставяй бирата да се
+                            стопля!</p>
                     </em>
                 </div>
             </div>
-            </div>
         {% endif %}
     </div>
+
 {% endblock %}

@@ -83,15 +83,20 @@ class MatchDetailView(ListView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         queryset = UserPredictions.objects.filter(match__match_number=pk, match__match_is_over=True).order_by('user_id')
-        queryset_match = UserPredictions.objects.filter(match__match_number=pk)
+        queryset_match = Matches.objects.filter(match_number=pk)
+        print(queryset_match)
         for item in queryset_match:
-            self.home_team = item.match.country_home
-            self.guest_team = item.match.country_guest
-            self.match_number = item.match.match_number
-            self.match_date = item.match.match_date
-            self.match_time = item.match.match_start_time
-            self.score_home = item.match.score_home
-            self.score_guest = item.match.score_guest
+            self.home_team = item.country_home
+            self.guest_team = item.country_guest
+            self.match_number = item.match_number
+            self.match_date = item.match_date
+            self.match_time = item.match_start_time
+            if item.match_is_over:
+                self.score_home = item.score_home
+                self.score_guest = item.score_guest
+            else:
+                self.score_home = '___'
+                self.score_guest = '___'
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
