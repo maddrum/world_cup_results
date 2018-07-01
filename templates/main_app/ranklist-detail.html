@@ -22,6 +22,10 @@
                                         Победа за {{ item.match.country_home }}
                                     {% elif item.prediction_match_state == 'guest' %}
                                         Победа за {{ item.match.country_guest }}
+                                    {% elif item.prediction_match_state == 'penalties_home' %}
+                                        Победа за {{ item.match.country_home }} след дузпи
+                                    {% elif item.prediction_match_state == 'penalties_guest' %}
+                                        Победа за {{ item.match.country_guest }} след дузпи
                                     {% else %}
                                         Равен
                                     {% endif %}
@@ -48,6 +52,10 @@
                                         Победа за {{ item.match.country_home }}
                                     {% elif item.match.match_state == 'guest' %}
                                         Победа за {{ item.match.country_guest }}
+                                    {% elif item.prediction_match_state == 'penalties_home' %}
+                                        Победа за {{ item.match.country_home }} след дузпи
+                                    {% elif item.prediction_match_state == 'penalties_guest' %}
+                                        Победа за {{ item.match.country_guest }} след дузпи
                                     {% else %}
                                         Равен
                                     {% endif %}
@@ -56,11 +64,17 @@
                             <li>
                                 <div class="text-block histprylist bonus-list white">
                                     Голове за {{ item.match.country_home }} : {{ item.match.score_home }}
+                                    {% if item.match.penalties %}
+                                        ({{ item.match.score_after_penalties_home }})
+                                    {% endif %}
                                 </div>
                             </li>
                             <li>
                                 <div class="text-block histprylist bonus-list white">
                                     Голове за {{ item.match.country_guest }} : {{ item.match.score_guest }}
+                                    {% if item.match.penalties %}
+                                        ({{ item.match.score_after_penalties_guest }})
+                                    {% endif %}
                                 </div>
                             </li>
                         </ul>
