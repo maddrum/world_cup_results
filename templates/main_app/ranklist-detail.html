@@ -10,14 +10,14 @@
         {% for item in ranklist %}
             <div class="rankings1 w-row">
                 <div class="w-row">
-                    <div class="match-number" align="center">
+                    <div class="match-number" align="center" style="line-height: 50px">
                         {{ item.match }}
                     </div>
                     <div class="w-col w-col-6 w-col-stack w-row">
                         <h3>Прогнозирал:</h3>
                         <ul class="unordered-list w-list-unstyled">
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px">
                                     {% if item.prediction_match_state == 'home' %}
                                         Победа за {{ item.match.country_home }}
                                     {% elif item.prediction_match_state == 'guest' %}
@@ -32,12 +32,12 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px">
                                     Голове за {{ item.match.country_home }} : {{ item.prediction_goals_home }}
                                 </div>
                             </li>
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px">
                                     Голове за {{ item.match.country_guest }} : {{ item.prediction_goals_guest }}
                                 </div>
                             </li>
@@ -47,7 +47,7 @@
                         <h3>В действителсност</h3>
                         <ul class="unordered-list w-list-unstyled">
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px">
                                     {% if item.match.match_state == 'home' %}
                                         Победа за {{ item.match.country_home }}
                                     {% elif item.match.match_state == 'guest' %}
@@ -62,7 +62,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px" >
                                     Голове за {{ item.match.country_home }} : {{ item.match.score_home }}
                                     {% if item.match.penalties %}
                                         ({{ item.match.score_after_penalties_home }})
@@ -70,7 +70,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="text-block histprylist bonus-list white">
+                                <div class="text-block histprylist bonus-list white" style="margin-bottom: 10px">
                                     Голове за {{ item.match.country_guest }} : {{ item.match.score_guest }}
                                     {% if item.match.penalties %}
                                         ({{ item.match.score_after_penalties_guest }})
@@ -85,8 +85,8 @@
                     <div class="text-block white" style="text-align: left">
                         {{ item.prediction_note|linebreaks }}
                     </div>
-                    <div style="padding-top: 20px">
-                        <h1>Общо точки: {{ item.points_gained }} </h1>
+                    <div>
+                        <h2>Общо точки: {{ item.points_gained }} </h2>
                     </div>
                 </div>
             </div>
