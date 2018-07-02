@@ -89,6 +89,17 @@ def score_calculator(sender, instance, created, *args, **kwargs):
     match_goals_home = instance.score_home
     match_goals_guest = instance.score_guest
     match_state = instance.match_state
+    # multipliers for quater, semi and finals
+    multiplier_definition = {
+        'group_phase': 1,
+        'eighth-finals': 1,
+        'quarterfinals': 2,
+        'semifinals': 3,
+        'little_final': 3,
+        'final': 4,
+    }
+    multiplier = multiplier_definition[instance.phase]
+
     for item in queryset:
         user_prediction_goals_home = item.prediction_goals_home
         user_prediction_goals_guest = item.prediction_goals_guest
@@ -96,11 +107,13 @@ def score_calculator(sender, instance, created, *args, **kwargs):
         points = 1
         note = '1.Прогноза за мач: 1 т.'
         if user_prediction_match_state == match_state:
-            points += 3
-            note = note + ' \n 2.Познат изход от срещата: 3т.'
+            temp_points = 3 * multiplier
+            points += temp_points
+            note = note + f' \n 2.Познат изход от срещата: {temp_points} т.'
         if user_prediction_goals_home == match_goals_home and user_prediction_goals_guest == match_goals_guest:
-            points += 5
-            note = note + ' \n 3.Познат точен резултат: 5т.'
+            temp_points = 5 * multiplier
+            points += temp_points
+            note = note + f' \n 3.Познат точен резултат: {temp_points} т.'
         item.points_gained = points
         item.prediction_note = note
         item.save()
