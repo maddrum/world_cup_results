@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'accounts',
     'bonus_points',
     'site_stats',
+
 ]
 
 MIDDLEWARE = [
