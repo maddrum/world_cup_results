@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'matches',
     'accounts',
     'bonus_points',
-
 ]
 
 MIDDLEWARE = [
