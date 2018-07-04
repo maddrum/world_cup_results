@@ -1,6 +1,10 @@
 from django.views.generic import TemplateView
 from site_stats.models import TotalStats, UserGuessesNumber
 from django.utils import timezone
+# for fussion charts
+from django.shortcuts import render
+from django.http import HttpResponse
+from fusioncharts.fusioncharts import FusionCharts
 
 
 class StatsTextStatsView(TemplateView):
@@ -27,3 +31,54 @@ class StatsTextStatsView(TemplateView):
         context['user_most_results'] = user_most_results
 
         return context
+
+
+def prediction_chart(request):
+    column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json",
+                            """{  
+                            "chart": {                                              
+                                "xAxisName": "Ден",
+                                "yAxisName": "Брой дадени прогнози",                                
+                                "theme": "zune"
+                                
+                            },
+                            "data": [{
+                                "label": "Jan",
+                                "value": "420000"
+                            }, {
+                                "label": "Feb",
+                                "value": "810000"
+                            }, {
+                                "label": "Mar",
+                                "value": "720000"
+                            }, {
+                                "label": "Apr",
+                                "value": "550000"
+                            }, {
+                                "label": "May",
+                                "value": "910000"
+                            }, {
+                                "label": "Jun",
+                                "value": "510000"
+                            }, {
+                                "label": "Jul",
+                                "value": "680000"
+                            }, {
+                                "label": "Aug",
+                                "value": "620000"
+                            }, {
+                                "label": "Sep",
+                                "value": "610000"
+                            }, {
+                                "label": "Oct",
+                                "value": "490000"
+                            }, {
+                                "label": "Nov",
+                                "value": "900000"
+                            }, {
+                                "label": "Dec",
+                                "value": "730000"
+                            }]
+                        }""")
+    request.encoding = 'UTF-8'
+    return render(request, 'site_stats/stats-predictions.html', {'output': column2d.render().encode('utf-8').decode('utf-8')})

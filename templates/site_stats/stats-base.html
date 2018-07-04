@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block header_scriptload %}
+    <script type="text/javascript" src="{% static "js/fusioncharts.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/fusioncharts.theme.zune.js" %}"></script>
+{% endblock %}
 
 {% block body_tag_define %}
     <body class="body-2">
@@ -15,7 +19,7 @@
                 <a href="{% url 'site_stats:text_stats' %}" class="tab-link w-inline-block w-tab-link w--current">
                     <div class="tab-text">Обобщена</div>
                 </a>
-                <a href="{% url 'accounts:profile_history' %}" class="tab-link w-inline-block w-tab-link">
+                <a href="{% url 'site_stats:prediction_chart' %}" class="tab-link w-inline-block w-tab-link">
                     <div class="tab-text">Прогнози</div>
                 </a>
                 <a href="{% url 'accounts:profile_bonus' %}" class="tab-link w-inline-block w-tab-link">
