@@ -1,3 +1,4 @@
 from django.contrib import admin
+from site_stats.models import TotalStats
 
-# Register your models here.
+admin.site.register(TotalStats)
