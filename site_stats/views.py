@@ -13,7 +13,7 @@ class StatsTextStatsView(TemplateView):
         user_most_match_states = UserGuessesNumber.objects.all().order_by('-guessed_matches')[0]
         user_most_results = UserGuessesNumber.objects.all().order_by('-guessed_results')[0]
         latest_stats = all_stats[0]
-        # converc created date into Sofia time
+        # convert created date into Sofia time
         timezone_sofia = timezone.get_default_timezone()
         utc_created_time = timezone.utc.localize(latest_stats.created_date, is_dst=None)
         sofia_created_time = utc_created_time.astimezone(timezone_sofia)
