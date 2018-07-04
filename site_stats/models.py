@@ -4,12 +4,22 @@ import datetime
 
 
 class TotalStats(models.Model):
-    Users = get_user_model()
+    users = get_user_model()
     total_predictions = models.IntegerField()
     total_points_gained = models.IntegerField()
     total_match_states_guessed = models.IntegerField()
     total_match_results_guessed = models.IntegerField()
-    user_guessed_most_match_states = models.ForeignKey(Users, on_delete=models.CASCADE,
-                                                       related_name='stats_user_match_states')
-    user_guessed_most_results = models.ForeignKey(Users, on_delete=models.CASCADE, related_name='stats_user_results')
     created_date = models.DateTimeField(default=datetime.datetime.utcnow)
+
+    def __str__(self):
+        return str(self.created_date)
+
+
+class UserGuessesNumber(models.Model):
+    users = get_user_model()
+    user = models.ForeignKey(users, on_delete=models.CASCADE)
+    guessed_matches = models.IntegerField()
+    guessed_results = models.IntegerField()
+
+    def __str__(self):
+        return str(self.user)
