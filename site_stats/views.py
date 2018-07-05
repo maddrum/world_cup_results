@@ -47,8 +47,8 @@ class CommonPredictionChart(TemplateView):
         context = super().get_context_data()
         data_source = {}
         data_source['chart'] = {
-            "xAxisName": "Ден",
-            "yAxisName": "Брой дадени прогнози",
+            # "xAxisName": "Ден",
+            # "yAxisName": "Брой дадени прогнози",
             "labelFontSize": 12,
             "theme": "zune"
         }
@@ -88,8 +88,8 @@ class CommonPointsChart(TemplateView):
         context = super().get_context_data()
         data_source = {}
         data_source['chart'] = {
-            "xAxisName": "Ден",
-            "yAxisName": "Спечелени точки",
+            # "xAxisName": "Ден",
+            # "yAxisName": "Спечелени точки",
             "labelFontSize": 12,
             "theme": "zune",
         }
