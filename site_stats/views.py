@@ -38,7 +38,7 @@ class CommonPredictionChart(TemplateView):
     template_name = 'site_stats/stats-common.html'
 
     def get_context_data(self, **kwargs):
-
+        graph_name = 'Дадени прогнози по дни'
         all_events = EventDates.objects.all()
         event_dates = {item.event_name: [item.event_start_date, item.event_end_date,
                                          (item.event_end_date - item.event_start_date).days] for item in
@@ -49,6 +49,7 @@ class CommonPredictionChart(TemplateView):
         data_source['chart'] = {
             "xAxisName": "Ден",
             "yAxisName": "Брой дадени прогнози",
+            "labelFontSize": 12,
             "theme": "zune"
         }
         data_source['data'] = []
@@ -59,14 +60,18 @@ class CommonPredictionChart(TemplateView):
             for day in range(difference + 1):
                 query_date = start_date + datetime.timedelta(days=day)
                 day_prediction_count = UserPredictions.objects.filter(match__match_date=query_date).count()
+                legend_date = str(query_date).split('-')[2] + "." + str(query_date).split('-')[1]
                 temp_dict = {
-                    "label": str(query_date),
+                    "label": str(legend_date),
                     "value": day_prediction_count,
                 }
                 data_source['data'].append(temp_dict)
+            break
+            # only first event will be shown. If we have to add future stats for multiple events this should be changed accordingly
 
-        column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json", data_source)
+        column2d = FusionCharts("column2d", "ex1", "1000", "600", "chart-1", "json", data_source)
         context['output'] = column2d.render().encode('utf-8').decode('utf-8')
+        context['graph_name'] = graph_name
         return context
 
 
@@ -74,6 +79,7 @@ class CommonPointsChart(TemplateView):
     template_name = 'site_stats/stats-common.html'
 
     def get_context_data(self, **kwargs):
+        graph_name = 'Спечелени точки по дни'
         all_events = EventDates.objects.all()
         event_dates = {item.event_name: [item.event_start_date, item.event_end_date,
                                          (item.event_end_date - item.event_start_date).days] for item in
@@ -84,7 +90,8 @@ class CommonPointsChart(TemplateView):
         data_source['chart'] = {
             "xAxisName": "Ден",
             "yAxisName": "Спечелени точки",
-            "theme": "zune"
+            "labelFontSize": 12,
+            "theme": "zune",
         }
         data_source['data'] = []
         for item in event_dates.values():
@@ -93,17 +100,19 @@ class CommonPointsChart(TemplateView):
             difference = item[2]
             for day in range(difference + 1):
                 query_date = start_date + datetime.timedelta(days=day)
-                day_points_objects = UserPredictions.objects.filter(match__match_date=query_date)
-                points_sum = 0
-                for match_object in day_points_objects:
-                    points_sum += match_object.points_gained
-
+                day_points_objects = UserPredictions.objects.filter(match__match_date=query_date).values_list(
+                    'points_gained', flat=True)
+                points_sum = sum(day_points_objects)
+                legend_date = str(query_date).split('-')[2] + "." + str(query_date).split('-')[1]
                 temp_dict = {
-                    "label": str(query_date),
+                    "label": str(legend_date),
                     "value": points_sum,
                 }
                 data_source['data'].append(temp_dict)
+            break
+            # only first event will be shown. If we have to add future stats for multiple events this should be changed accordingly
 
-        column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json", data_source)
+        column2d = FusionCharts("column2d", "ex1", "1000", "600", "chart-1", "json", data_source)
+        context['graph_name'] = graph_name
         context['output'] = column2d.render().encode('utf-8').decode('utf-8')
         return context
