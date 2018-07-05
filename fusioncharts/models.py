@@ -24,4 +24,3 @@
 #
 # 	def __unicode__(self):
 # 		return u'%s %s %s' % (self.Name, self.Code, self.Population)
-#
