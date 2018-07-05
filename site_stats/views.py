@@ -4,7 +4,7 @@ from matches.models import UserPredictions
 from matches.models import EventDates
 from django.utils import timezone
 import datetime
-# for fussion charts
+# for fusion charts
 from fusioncharts.fusioncharts import FusionCharts
 
 
