@@ -4,5 +4,5 @@ from site_stats import views
 app_name = 'site_stats'
 urlpatterns = [
     url(r'text-stats/$', views.StatsTextStatsView.as_view(), name='text_stats'),
-    url(r'prediction-chart/$', views.prediction_chart, name='prediction_chart'),
+    url(r'prediction-chart/$', views.CommonPredictionChart.as_view(), name='prediction_chart'),
 ]

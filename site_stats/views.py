@@ -1,9 +1,10 @@
 from django.views.generic import TemplateView
 from site_stats.models import TotalStats, UserGuessesNumber
+from matches.models import UserPredictions
+from matches.models import EventDates
 from django.utils import timezone
+import datetime
 # for fussion charts
-from django.shortcuts import render
-from django.http import HttpResponse
 from fusioncharts.fusioncharts import FusionCharts
 
 
@@ -33,52 +34,36 @@ class StatsTextStatsView(TemplateView):
         return context
 
 
-def prediction_chart(request):
-    column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json",
-                            """{  
-                            "chart": {                                              
-                                "xAxisName": "Ден",
-                                "yAxisName": "Брой дадени прогнози",                                
-                                "theme": "zune"
-                                
-                            },
-                            "data": [{
-                                "label": "Jan",
-                                "value": "420000"
-                            }, {
-                                "label": "Feb",
-                                "value": "810000"
-                            }, {
-                                "label": "Mar",
-                                "value": "720000"
-                            }, {
-                                "label": "Apr",
-                                "value": "550000"
-                            }, {
-                                "label": "May",
-                                "value": "910000"
-                            }, {
-                                "label": "Jun",
-                                "value": "510000"
-                            }, {
-                                "label": "Jul",
-                                "value": "680000"
-                            }, {
-                                "label": "Aug",
-                                "value": "620000"
-                            }, {
-                                "label": "Sep",
-                                "value": "610000"
-                            }, {
-                                "label": "Oct",
-                                "value": "490000"
-                            }, {
-                                "label": "Nov",
-                                "value": "900000"
-                            }, {
-                                "label": "Dec",
-                                "value": "730000"
-                            }]
-                        }""")
-    request.encoding = 'UTF-8'
-    return render(request, 'site_stats/stats-predictions.html', {'output': column2d.render().encode('utf-8').decode('utf-8')})
+class CommonPredictionChart(TemplateView):
+    template_name = 'site_stats/stats-predictions.html'
+
+    def get_context_data(self, **kwargs):
+        all_events = EventDates.objects.all()
+        event_dates = {item.event_name: [item.event_start_date, item.event_end_date,
+                                         (item.event_end_date - item.event_start_date).days] for item in
+                       all_events}
+
+        context = super().get_context_data()
+        data_source = {}
+        data_source['chart'] = {
+            "xAxisName": "Ден",
+            "yAxisName": "Брой дадени прогнози",
+            "theme": "zune"
+        }
+        data_source['data'] = []
+        for item in event_dates.values():
+            start_date = item[0]
+            end_date = item[1]
+            difference = item[2]
+            for day in range(difference + 1):
+                query_date = start_date + datetime.timedelta(days=day)
+                day_prediction_count = UserPredictions.objects.filter(match__match_date=query_date).count()
+                temp_dict = {
+                    "label": str(query_date),
+                    "value": day_prediction_count,
+                }
+                data_source['data'].append(temp_dict)
+
+        column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json", data_source)
+        context['output'] = column2d.render().encode('utf-8').decode('utf-8')
+        return context
