@@ -79,6 +79,15 @@ class UserScore(models.Model):
         return str(self.user_id) + ":" + str(self.points)
 
 
+class EventDates(models.Model):
+    event_name = models.CharField(max_length=200)
+    event_start_date = models.DateField()
+    event_end_date = models.DateField()
+
+    def __str__(self):
+        return self.event_name
+
+
 def score_calculator(sender, instance, created, *args, **kwargs):
     # 1. Calculate points for every user upon saving match result.
     # 2. Calculate ranklist after every match

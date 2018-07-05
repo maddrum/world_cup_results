@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import UpdateView
-from matches.models import UserPredictions, Matches
+from matches.models import UserPredictions, Matches, EventDates
 import datetime
 from django.middleware.csrf import CsrfViewMiddleware
 from django.contrib.auth.decorators import login_required
@@ -11,16 +10,17 @@ def user_predictions_start(request):
     error_text = ''
     show_back_button = True
     user_id = request.user
+    event_name = 'World Cup 2018'
 
     # date and datetime formats and WC start date
     date_format = '%Y-%m-%d'
     datetime_format = date_format + ' ' + '%H:%M:%S'
-    start_date = datetime.datetime.strptime('2018-06-14', date_format)
-
+    start_date = EventDates.objects.get(event_name=event_name).event_start_date
     # get current date and today match or first match if before start date
-    date_difference = datetime.datetime.now() - start_date
+    date_difference = datetime.datetime.now().date() - start_date
+    print(date_difference)
     if date_difference.days < 0:
-        date = datetime.datetime.strptime('2018-06-14', date_format).date()
+        date = start_date
     else:
         date = datetime.datetime.now().date()
     utc_current_time_delta = datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
