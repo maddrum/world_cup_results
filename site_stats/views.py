@@ -35,9 +35,10 @@ class StatsTextStatsView(TemplateView):
 
 
 class CommonPredictionChart(TemplateView):
-    template_name = 'site_stats/stats-predictions.html'
+    template_name = 'site_stats/stats-common.html'
 
     def get_context_data(self, **kwargs):
+
         all_events = EventDates.objects.all()
         event_dates = {item.event_name: [item.event_start_date, item.event_end_date,
                                          (item.event_end_date - item.event_start_date).days] for item in
@@ -61,6 +62,45 @@ class CommonPredictionChart(TemplateView):
                 temp_dict = {
                     "label": str(query_date),
                     "value": day_prediction_count,
+                }
+                data_source['data'].append(temp_dict)
+
+        column2d = FusionCharts("column2d", "ex1", "600", "400", "chart-1", "json", data_source)
+        context['output'] = column2d.render().encode('utf-8').decode('utf-8')
+        return context
+
+
+class CommonPointsChart(TemplateView):
+    template_name = 'site_stats/stats-common.html'
+
+    def get_context_data(self, **kwargs):
+        all_events = EventDates.objects.all()
+        event_dates = {item.event_name: [item.event_start_date, item.event_end_date,
+                                         (item.event_end_date - item.event_start_date).days] for item in
+                       all_events}
+
+        context = super().get_context_data()
+        data_source = {}
+        data_source['chart'] = {
+            "xAxisName": "Ден",
+            "yAxisName": "Спечелени точки",
+            "theme": "zune"
+        }
+        data_source['data'] = []
+        for item in event_dates.values():
+            start_date = item[0]
+            end_date = item[1]
+            difference = item[2]
+            for day in range(difference + 1):
+                query_date = start_date + datetime.timedelta(days=day)
+                day_points_objects = UserPredictions.objects.filter(match__match_date=query_date)
+                points_sum = 0
+                for match_object in day_points_objects:
+                    points_sum += match_object.points_gained
+
+                temp_dict = {
+                    "label": str(query_date),
+                    "value": points_sum,
                 }
                 data_source['data'].append(temp_dict)
 
