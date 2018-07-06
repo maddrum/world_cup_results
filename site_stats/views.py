@@ -127,7 +127,7 @@ class AllUsersListView(ListView):
     context_object_name = 'all_users'
 
 
-class PredictionsGraphPerUser(CommonChartsBaseByDays):
+class UserGraphsView(CommonChartsBaseByDays):
     template_name = 'site_stats/user-graphs.html'
 
     def get_context_data(self, **kwargs):
@@ -135,9 +135,10 @@ class PredictionsGraphPerUser(CommonChartsBaseByDays):
         user_id = self.kwargs['pk']
         username = get_user_model().objects.get(id=user_id).username
         event_dates = context['event_dates']
-        data_source_predictions = context['data_source']
+        data_source_points = dict(context['data_source'])
+        data_source_points['data'] = []
+        data_source_predictions = dict(context['data_source'])
         data_source_predictions['data'] = []
-
         # get predictions for user
         for item in event_dates.values():
             start_date = item[0]
@@ -153,23 +154,11 @@ class PredictionsGraphPerUser(CommonChartsBaseByDays):
                 }
                 data_source_predictions['data'].append(temp_dict)
             break
-        column2d_predictions = FusionCharts("column2d", "ex1", "1000", "600", "chart", "json",
+        column2d_predictions = FusionCharts("column2d", "ex1", "1000", "600", "chart-predictions", "json",
                                             data_source_predictions)
-        context['graph_name'] = f'Прогнози по дни за {username}'
-        context['output'] = column2d_predictions.render()
-        return context
+        context['graph_name_predictions'] = f'Прогнози по дни за {username}'
+        context['output_predictions'] = column2d_predictions.render()
 
-
-class PointsGraphPerUser(CommonChartsBaseByDays):
-    template_name = 'site_stats/user-graphs.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        user_id = self.kwargs['pk']
-        username = get_user_model().objects.get(id=user_id).username
-        event_dates = context['event_dates']
-        data_source_points = context['data_source']
-        data_source_points['data'] = []
         # get user points by days
         for item in event_dates.values():
             start_date = item[0]
@@ -187,8 +176,8 @@ class PointsGraphPerUser(CommonChartsBaseByDays):
                 }
                 data_source_points['data'].append(temp_dict)
             break
-        column2d_points = FusionCharts("column2d", "ex1", "1000", "600", "chart", "json", data_source_points)
-        context['graph_name'] = f'Точки по дни за {username}'
-        context['output'] = column2d_points.render()
+        column2d_points = FusionCharts("column2d", "ex2", "1000", "600", "chart-points", "json", data_source_points)
+        context['graph_name_points'] = f'Точки по дни за {username}'
+        context['output_points'] = column2d_points.render()
 
         return context

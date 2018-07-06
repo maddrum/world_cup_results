@@ -7,7 +7,5 @@ urlpatterns = [
     url(r'prediction-chart/$', views.CommonPredictionChart.as_view(), name='prediction_chart'),
     url(r'points-chart/$', views.CommonPointsChart.as_view(), name='prediction_points'),
     url(r'users-selector/$', views.AllUsersListView.as_view(), name='user_selector'),
-    url('predictions-graph-per-user/(?P<pk>\d+)', views.PredictionsGraphPerUser.as_view(),
-        name='prediction_graph_per_user'),
-    url('points-graph-per-user/(?P<pk>\d+)', views.PointsGraphPerUser.as_view(), name='points_graph_per_user'),
+    url('user-graphs/(?P<pk>\d+)', views.UserGraphsView.as_view(), name='graphs_per_user'),
 ]
