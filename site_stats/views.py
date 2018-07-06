@@ -123,6 +123,7 @@ class CommonPointsChart(CommonChartsBaseByDays):
 
 class AllUsersListView(ListView):
     model = get_user_model()
+    ordering = ('username')
     template_name = 'site_stats/user-selector.html'
     context_object_name = 'all_users'
 
