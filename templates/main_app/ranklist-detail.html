@@ -4,12 +4,13 @@
 {% endblock %}
 {% block body_content %}
     <div class="inner_page_header">
-        <div class="heading inner-ttl">Прогнози на  {{ username }}</div>
+        <div class="heading inner-ttl">Прогнози на {{ username }}</div>
     </div>
     <div class="content-wrp">
         {% for item in ranklist %}
             <div class="game-single inprofile">
-                <div class="match-number matchnumberprofile" style="color: #f3daa8">мач {{ item.match.match_number }}</div>
+                <div class="match-number matchnumberprofile" style="color: #f3daa8">
+                    мач {{ item.match.match_number }}</div>
                 <div class="w-row">
                     <div class="column-4 w-col w-col-6 w-col-medium-6 w-col-small-6 w-col-tiny-6">
                         <div class="team team-profile">
@@ -62,9 +63,9 @@
                                             Победа за {{ item.match.country_home }}
                                         {% elif item.match.match_state == 'guest' %}
                                             Победа за {{ item.match.country_guest }}
-                                        {% elif item.prediction_match_state == 'penalties_home' %}
+                                        {% elif item.match.match_state == 'penalties_home' %}
                                             Победа за {{ item.match.country_home }} след дузпи
-                                        {% elif item.prediction_match_state == 'penalties_guest' %}
+                                        {% elif item.match.match_state == 'penalties_guest' %}
                                             Победа за {{ item.match.country_guest }} след дузпи
                                         {% else %}
                                             Равен

@@ -59,9 +59,9 @@
                                         Победа за {{ item.match.country_home }}
                                     {% elif item.match.match_state == 'guest' %}
                                         Победа за {{ item.match.country_guest }}
-                                    {% elif item.prediction_match_state == 'penalties_home' %}
+                                    {% elif item.match.match_state == 'penalties_home' %}
                                         Победа за {{ item.match.country_home }} след дузпи
-                                    {% elif item.prediction_match_state == 'penalties_guest' %}
+                                    {% elif item.match.match_state == 'penalties_guest' %}
                                         Победа за {{ item.match.country_guest }} след дузпи
                                     {% else %}
                                         Равен
