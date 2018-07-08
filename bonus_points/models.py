@@ -62,4 +62,4 @@ class UserBonusSummary(models.Model):
     total_summary = models.TextField()
 
     def __str__(self):
-        return str(self.user)
+        return str(self.user) + ":" + str(self.total_bonus_points)

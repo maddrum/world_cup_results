@@ -18,11 +18,11 @@ class Command(BaseCommand):
             for auto_p in auto_points_all:
                 if auto_p.points_gained != 0:
                     points += auto_p.points_gained
-                    summary_text = summary_text + f' От играта \"{auto_p.auto_user_bonus_name}\" получи: {auto_p.points_gained} точки \\n'
+                    summary_text = summary_text + f' От играта \"{auto_p.auto_user_bonus_name}\" получи: {auto_p.points_gained} точки \n'
             for non_ap in non_auto_points_all:
                 if non_ap.points_gained != 0:
                     points += non_ap.points_gained
-                    summary_text = summary_text + f' От играта \"{non_ap.user_bonus_name}\" получи: {non_ap.points_gained} точки \\n'
+                    summary_text = summary_text + f' От играта \"{non_ap.user_bonus_name}\" получи: {non_ap.points_gained} точки \n'
             # save to database
             if points == 0:
                 continue

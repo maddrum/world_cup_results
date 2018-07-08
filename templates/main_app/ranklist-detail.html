@@ -103,7 +103,21 @@
                 {% endif %}
             </div>
         {% endfor %}
+
+        {% if bonuses %}
+            <h1 class="heading tab-heading history-ttl red" style="color: #f3daa8">Получени бонус точки:</h1>
+            <div class="text-block histprylist" style="color: white"> {{ bonuses.total_summary|linebreaks }}<br>
+            </div>
+            <div class="text-block histprylist points-indicator" style="color: #f3daa8">Общо бонус
+                точки: {{ bonuses.total_bonus_points }} т.<br>
+            </div>
+            <div class="text-block histprylist points-indicator" style="color: #f3daa8">Всички бонус точки са прибавени
+                към
+                крайния резултат!<br>
+            </div>
+        {% endif %}
     </div>
+
 {% endblock %}
 
 

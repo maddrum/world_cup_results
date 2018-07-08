@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, ListView, CreateView
 from matches.models import Matches, UserScore, UserPredictions
+from bonus_points.models import UserBonusSummary
 from main_app.models import SiteContact
 from main_app.forms import ContactForm
 from django.contrib.auth import get_user_model
@@ -60,6 +61,12 @@ class RankilstUserPoints(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
+        bonuses_added_check = UserScore.objects.get(user_id=self.username).bonus_points_added
+        if bonuses_added_check:
+            bonuses = UserBonusSummary.objects.get(user=self.username)
+        else:
+            bonuses = False
+        context['bonuses'] = bonuses
         context['username'] = self.username
         return context
 

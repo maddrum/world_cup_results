@@ -74,6 +74,7 @@ class UserScore(models.Model):
     user = get_user_model()
     user_id = models.ForeignKey(user, on_delete=models.CASCADE, related_name='user_points')
     points = models.IntegerField(null=True, default=0)
+    bonus_points_added = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.user_id) + ":" + str(self.points)
