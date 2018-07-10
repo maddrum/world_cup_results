@@ -27,7 +27,7 @@
 }
 
 .nav-link {
-    height: 98px;
+    height: 50px;
     padding-top: 39px;
     font-family: 'Dusha fifa world cup 2018', sans-serif;
     color: #fff;
@@ -51,7 +51,16 @@
 .nav-link.bb {
     color: #f3daa8;
 }
+.nav-link.bb-blink {
+    color: #f3daa8;
+    animation: blinker 1s linear infinite;
+}
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 .container {
     max-width: 1160px;
 }
