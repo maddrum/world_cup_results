@@ -27,7 +27,7 @@ class BonusMainListView(LoginRequiredMixin, ListView):
             for user_item in queryset:
                 if item == user_item.user_bonus_name:
                     item.participate_link = False
-
+        
         return context
 
 
