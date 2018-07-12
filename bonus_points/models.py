@@ -24,7 +24,7 @@ class BonusDescription(models.Model):
     # only taken when 'choices' is selected for input_field
 
     def __str__(self):
-        return str(self.bonus_name) + ' и вземи ' + str(self.points) + ' точки'
+        return str(self.bonus_name) + ' [' + str(self.points) + ' точки]'
 
 
 class BonusUserPrediction(models.Model):
