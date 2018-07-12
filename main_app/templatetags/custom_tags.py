@@ -1,7 +1,6 @@
 from django import template
 from bonus_points.models import BonusDescription, BonusUserPrediction
 import datetime
-from django.contrib.auth import get_user_model
 
 register = template.Library()
 
