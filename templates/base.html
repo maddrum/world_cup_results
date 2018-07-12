@@ -65,7 +65,7 @@
                class="nav-link w-nav-link">
                 Статистика
             </a>
-            {% active_bonuses_checker as bonuses_active %}
+            {% active_bonuses_checker user as bonuses_active %}
             {% if bonuses_active %}
                 <a href="{% url 'bonus_points:bonus_main' %}" data-w-id="ae7752c4-2d27-e763-7bb8-8c9c52735f95"
                    class="nav-link bb bb-blink w-nav-link">Бонуси</a>
