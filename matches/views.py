@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import FormView
 from matches.models import UserPredictions, Matches, EventDates
+from matches import forms
 import datetime
 from django.middleware.csrf import CsrfViewMiddleware
 from django.contrib.auth.decorators import login_required
@@ -18,7 +20,6 @@ def user_predictions_start(request):
     start_date = EventDates.objects.get(event_name=event_name).event_start_date
     # get current date and today match or first match if before start date
     date_difference = datetime.datetime.now().date() - start_date
-    print(date_difference)
     if date_difference.days < 0:
         date = start_date
     else:
@@ -178,3 +179,8 @@ def user_predictions_post_handle(request):
     else:
         content_dict = {}
         return render(request, 'matches/prediction-success.html', content_dict)
+
+
+class DailyPredictionFormView(FormView):
+    form_class = forms.InputDailyPredictionForm
+    template_name =
