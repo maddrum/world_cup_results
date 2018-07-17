@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import FormView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from matches.models import UserPredictions, Matches, EventDates
 from matches import forms
 import datetime
 from django.middleware.csrf import CsrfViewMiddleware
 from django.contrib.auth.decorators import login_required
+from django.forms import modelformset_factory
+from matches.models import UserPredictions
 
 
 @login_required
@@ -181,6 +184,12 @@ def user_predictions_post_handle(request):
         return render(request, 'matches/prediction-success.html', content_dict)
 
 
-class DailyPredictionFormView(FormView):
-    form_class = forms.InputDailyPredictionForm
-    template_name =
+class DailyPredictionFormView(LoginRequiredMixin, FormView):
+    form_class_initial = modelformset_factory(UserPredictions, form=forms.InputDailyPredictionForm, extra=2)
+    form_class = form_class_initial
+    template_name = 'matches/input_predition_test.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['form'].queryset = UserPredictions.objects.filter(user_id=1)
+        return context
