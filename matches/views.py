@@ -185,11 +185,17 @@ def user_predictions_post_handle(request):
 
 
 class DailyPredictionFormView(LoginRequiredMixin, FormView):
-    form_class_initial = modelformset_factory(UserPredictions, form=forms.InputDailyPredictionForm, extra=2)
+    current_date = datetime.datetime.now().date()
+    current_date = current_date - datetime.timedelta(days=20)
+    today_matches_number = Matches.objects.filter(match_date=current_date).count()
+    print(current_date)
+    form_class_initial = modelformset_factory(UserPredictions, form=forms.InputDailyPredictionForm,
+                                              extra=today_matches_number)
     form_class = form_class_initial
     template_name = 'matches/input_predition_test.html'
 
     def get_context_data(self, **kwargs):
+        user = self.request.user
         context = super().get_context_data()
-        context['form'].queryset = UserPredictions.objects.filter(user_id=1)
+        context['form'].queryset = UserPredictions.objects.filter(user_id=user)
         return context
